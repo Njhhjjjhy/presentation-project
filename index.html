@@ -1,0 +1,2540 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>熊本「中古住宅翻修轉售」投資架構與條款摘要</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts - Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ========================================
+       RESET & BASE STYLES
+       ======================================== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    
+    body {
+      background: #F9F9F9;
+      overflow: hidden;
+      width: 100vw;
+      height: 100vh;
+    }
+    
+    /* ========================================
+       ACCESSIBILITY - WCAG AAA COMPLIANCE
+       ======================================== */
+    
+    /* Skip to main content link */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: #1E1F20;
+      color: #FFFFFF;
+      padding: 12px 24px;
+      text-decoration: none;
+      z-index: 100;
+      font-weight: 600;
+      border-radius: 4px;
+    }
+    
+    .skip-link:focus {
+      top: 0;
+      outline: 3px solid #FBB931;
+      outline-offset: 2px;
+    }
+    
+    /* Focus indicators - AAA compliant (3:1 contrast) */
+    *:focus-visible {
+      outline: 3px solid #1E1F20;
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+    
+    button:focus-visible,
+    a:focus-visible {
+      outline: 3px solid #1E1F20;
+      outline-offset: 3px;
+    }
+    
+    /* High contrast focus for interactive elements */
+    button:focus-visible {
+      box-shadow: 0 0 0 3px #1E1F20, 0 0 0 6px #FBB931;
+    }
+    
+    /* Screen reader only text */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+    
+    /* ARIA live region */
+    .aria-live {
+      position: absolute;
+      left: -10000px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+    
+    /* ========================================
+       TYPOGRAPHY CLASSES
+       ======================================== */
+    .headline-h1 {
+      font-size: clamp(2.4rem, 4vw, 2.5rem);
+      line-height: 1.25;
+      letter-spacing: 0.0025em;
+      font-weight: 600;
+      color: #1E1F20;
+      margin: 0;
+    }
+    
+    .headline-h2 {
+      font-size: clamp(2.1rem, 3.5vw, 2.2rem);
+      line-height: 1.25;
+      letter-spacing: 0.0025em;
+      font-weight: 600;
+      color: #1E1F20;
+      margin: 0;
+    }
+    
+    .headline-h3 {
+      font-size: clamp(1.7rem, 3vw, 1.8rem);
+      line-height: 1.25;
+      letter-spacing: 0.0025em;
+      font-weight: 600;
+      color: #1E1F20;
+      margin: 0;
+    }
+    
+    .headline-h4 {
+      font-size: clamp(1.45rem, 2.5vw, 1.5rem);
+      line-height: 1.25;
+      letter-spacing: 0.0025em;
+      font-weight: 600;
+      color: #1E1F20;
+      margin: 0;
+    }
+    
+    .headline-h5 {
+      font-size: clamp(1.2rem, 2vw, 1.25rem);
+      line-height: 1.25;
+      letter-spacing: 0.0025em;
+      font-weight: 600;
+      color: #1E1F20;
+      margin: 0;
+    }
+    
+    .body-l {
+      font-size: clamp(1.15rem, 1.5vw, 1.2rem);
+      line-height: 1.5;
+      letter-spacing: 0.0025em;
+      color: #40444C;
+      margin: 0;
+    }
+    
+    .body-m {
+      font-size: clamp(1rem, 1vw, 1rem);
+      line-height: 1.5;
+      letter-spacing: 0.0025em;
+      color: #40444C;
+      margin: 0;
+    }
+    
+    .body-s {
+      font-size: clamp(0.83rem, 0.8vw, 0.85rem);
+      line-height: 1.5;
+      letter-spacing: 0.0025em;
+      color: #40444C;
+      margin: 0;
+    }
+    
+    .body-xs {
+      font-size: clamp(0.75rem, 0.7vw, 0.75rem);
+      line-height: 1.5;
+      letter-spacing: 0.0025em;
+      color: #40444C; /* Changed from #6B7280 for AAA contrast (7:1 on #F9F9F9) */
+      margin: 0;
+    }
+    
+    .label-l {
+      font-size: 16px;
+      line-height: 1.25;
+      letter-spacing: 0.0025em;
+      font-weight: 400;
+      color: #40444C;
+      margin: 0;
+    }
+    
+    .label-m {
+      font-size: 14px;
+      line-height: 1.25;
+      letter-spacing: 0.0025em;
+      font-weight: 400;
+      color: #40444C;
+      margin: 0;
+    }
+    
+    /* ========================================
+       HORIZONTAL SCROLL CONTAINER
+       ======================================== */
+    .flipbook-container {
+      display: flex;
+      flex-direction: row;
+      width: 100vw;
+      height: 100vh;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+    }
+    
+    .flipbook-container::-webkit-scrollbar {
+      display: none;
+    }
+    .flipbook-container {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    
+    /* ========================================
+       SLIDES - FULL VIEWPORT WIDTH
+       ======================================== */
+    .slide {
+      min-width: 100vw;
+      max-width: 100vw;
+      width: 100vw;
+      min-height: 100vh;
+      height: 100vh;
+      flex-shrink: 0;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-start;
+      padding: 0 !important;
+      position: relative;
+      transition: opacity 300ms cubic-bezier(0.4, 0, 0.2, 1);
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+    
+    @media (min-width: 768px) {
+      .slide {
+        padding: 4rem 3rem;
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .slide {
+        padding: 5rem 4rem;
+      }
+    }
+    
+    /* ========================================
+       TRANSITIONS & ANIMATIONS
+       ======================================== */
+    .dot {
+      transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    button {
+      transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    /* Ensure navigation arrows never block the header */
+    #prevArrow,
+    #nextArrow {
+      /* Position arrows vertically centered, but ensure they're below header area */
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    
+    /* On smaller screens or when header is tall, ensure arrows don't overlap */
+    @media (max-height: 600px) {
+      #prevArrow,
+      #nextArrow {
+        top: calc(50% + 40px);
+      }
+    }
+    
+    /* ========================================
+       UTILITY CLASSES
+       ======================================== */
+    
+    /* CSS variable for consistent gap */
+    :root {
+      --header-content-gap: 32px;
+    }
+    
+    /* CRITICAL: Ensure 32px gap on ALL slides - highest priority rules */
+    /* Target ALL header lines regardless of class or structure */
+    .slide div[class*="border-t"],
+    .slide .slide-header-line,
+    .slide [class*="border-t"][class*="EDEEF1"],
+    .slide [class*="border-t"].w-full,
+    div.border-t.border-\[#EDEEF1\] {
+      margin-bottom: 32px !important;
+      margin-top: 0 !important;
+      padding: 0 !important;
+      display: block !important;
+    }
+    
+    /* Target ALL content containers */
+    .slide .content-wrapper,
+    .slide .flex-1.flex,
+    .slide .flex-1.content-wrapper,
+    .slide div.flex-1.flex,
+    .slide div.content-wrapper {
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+      padding-top: 0px !important;
+    }
+    
+    /* Ensure no margin collapse - duplicate rules for maximum specificity */
+    .slide > div > .slide-header-line,
+    .slide > div > [class*="border-t"][class*="EDEEF1"] {
+      margin-bottom: 32px !important;
+    }
+    
+    .slide > div > .content-wrapper,
+    .slide > div > .flex-1.flex {
+      margin-top: 0px !important;
+      padding-top: 0px !important;
+    }
+    
+    /* Ensure no spacing between header line and next sibling */
+    .slide-header-line + div,
+    [class*="border-t"][class*="EDEEF1"] + div,
+    .slide-header-line ~ div,
+    [class*="border-t"][class*="EDEEF1"] ~ div {
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+    }
+    
+    /* FINAL OVERRIDE: Ensure 32px gap using the most specific selectors possible */
+    section.slide > div > div[class*="border-t"][class*="EDEEF1"],
+    section.slide > div > .slide-header-line {
+      margin-bottom: 32px !important;
+    }
+    
+    section.slide > div > div[class*="border-t"][class*="EDEEF1"] + div,
+    section.slide > div > .slide-header-line + div,
+    section.slide > div > div[class*="border-t"][class*="EDEEF1"] ~ div.flex-1,
+    section.slide > div > .slide-header-line ~ div.flex-1,
+    section.slide > div > div[class*="border-t"][class*="EDEEF1"] ~ div.content-wrapper,
+    section.slide > div > .slide-header-line ~ div.content-wrapper {
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+    }
+    
+    /* Consistent header for all slides */
+    .slide-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      padding-top: 1.5rem;
+      padding-bottom: 1rem;
+      padding-left: calc(2rem + 120px);
+      padding-right: 2rem;
+    }
+    
+    @media (min-width: 768px) {
+      .slide-header {
+        padding: 2rem 4rem;
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+        padding-left: calc(4rem + 120px);
+        padding-right: 4rem;
+      }
+    }
+    
+    .slide-header-line {
+      border-top: 1px solid #EDEEF1;
+      width: 100%;
+      margin-top: 0 !important;
+      margin-bottom: 32px !important; /* Exactly 32px gap - using pixels directly */
+      padding: 0 !important;
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+      display: block !important;
+      height: 1px !important;
+      min-height: 1px !important;
+      max-height: 1px !important;
+      box-sizing: border-box !important;
+      line-height: 0 !important;
+      font-size: 0 !important;
+      overflow: visible !important;
+      clear: both !important;
+      float: none !important;
+    }
+    
+    /* Prevent margin collapse between header line and content */
+    .slide-header-line::after {
+      content: '';
+      display: table !important;
+      clear: both !important;
+      height: 0 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    
+    /* ABSOLUTE FINAL OVERRIDE - Ensure 32px gap using the most specific selectors */
+    html body main.flipbook-container section.slide > div > div.slide-header-line {
+      margin-bottom: 32px !important;
+    }
+    
+    html body main.flipbook-container section.slide > div > div[class*="border-t"][class*="EDEEF1"].w-full {
+      margin-bottom: 32px !important;
+    }
+    
+    html body main.flipbook-container section.slide > div > div.content-wrapper,
+    html body main.flipbook-container section.slide > div > div.flex-1.flex {
+      margin-top: 0px !important;
+      padding-top: 0px !important;
+    }
+    
+    
+    .slide-header-line,
+    [class*="border-t"][class*="EDEEF1"],
+    [class*="border-t"].w-full {
+      margin-bottom: 32px !important;
+    }
+    
+    .content-wrapper,
+    .flex-1.flex,
+    .flex-1.content-wrapper {
+      padding-top: 0px !important;
+      margin-top: 0px !important;
+    }
+    
+    /* Ensure content wrapper has no top padding to maintain 32px gap */
+    .content-wrapper {
+      max-width: 1280px;
+      margin: 0 auto;
+      width: 100%;
+      padding-left: calc(2rem + 120px);
+      padding-right: 2rem;
+      padding-top: 0 !important; /* No top padding - gap comes from header line margin */
+      padding-bottom: 0 !important; /* No bottom padding - page number is separate */
+    }
+    
+    /* Page number footer - separate component, does not overlay */
+    .page-number-footer {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      padding-left: calc(2rem + 120px);
+      padding-right: 2rem;
+      padding-bottom: 1rem;
+      padding-top: 1rem;
+      flex-shrink: 0;
+    }
+    
+    @media (min-width: 768px) {
+      .page-number-footer {
+        padding-left: calc(4rem + 120px);
+        padding-right: 4rem;
+      }
+    }
+    
+    /* Ensure flex-1 containers after header line also have no top padding */
+    .slide > div > .flex-1.flex {
+      padding-top: 0 !important; /* No top padding - gap comes from header line margin */
+    }
+    
+    /* Ensure all content elements immediately after header line have no top margin/padding */
+    .slide-header-line + *,
+    .slide-header-line ~ .flex-1,
+    .slide-header-line ~ .content-wrapper,
+    [class*="border-t"][class*="EDEEF1"] + *,
+    [class*="border-t"][class*="EDEEF1"] ~ .flex-1 {
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+    }
+    
+    /* Ensure first child of content wrapper has no top margin */
+    .content-wrapper > *:first-child,
+    .flex-1.flex > *:first-child {
+      margin-top: 0 !important;
+    }
+    
+    /* Use gap on flex containers to ensure exact 32px spacing after header line */
+    .slide > div.flex.flex-col > .slide-header-line + *,
+    .slide > div.flex.flex-col > [class*="border-t"] + * {
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+    }
+    
+    /* Ensure the gap between header line and content is exactly 32px */
+    .slide > div.flex.flex-col {
+      gap: 0;
+    }
+    
+    /* Ensure no spacing is added by flex containers or other elements */
+    .slide > div > .slide-header-line + *,
+    .slide > div > [class*="border-t"] + * {
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+    }
+    
+    /* Final override - ensure gap is exactly 32px on all slides */
+    section.slide .slide-header-line,
+    section.slide [class*="border-t"][class*="EDEEF1"].w-full {
+      margin-bottom: 32px !important;
+      margin-top: 0 !important;
+    }
+    
+    section.slide .content-wrapper,
+    section.slide .flex-1.flex {
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+    }
+    
+    /* Ultimate override - ensure 32px gap on every possible combination */
+    .slide .slide-header-line,
+    .slide [class*="border-t"][class*="EDEEF1"],
+    .slide [class*="border-t"].w-full {
+      margin-bottom: 32px !important;
+    }
+    
+    .slide .content-wrapper[style*="padding-top"],
+    .slide .flex-1[style*="padding-top"],
+    .slide .flex-1.flex[style*="padding-top"] {
+      padding-top: 0 !important;
+    }
+    
+    /* Ensure no margin collapse or other spacing issues */
+    .slide > div > .slide-header-line,
+    .slide > div > [class*="border-t"][class*="EDEEF1"] {
+      margin-bottom: 32px !important;
+      display: block;
+    }
+    
+    .slide > div > .slide-header-line ~ *,
+    .slide > div > [class*="border-t"][class*="EDEEF1"] ~ * {
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+    }
+    
+    /* Ensure all header lines have exactly 32px gap - override everything */
+    .slide-header-line,
+    [class*="border-t"][class*="EDEEF1"],
+    [class*="border-t"].w-full {
+      margin-bottom: 32px !important;
+    }
+    
+    /* Override any inline styles to ensure 32px */
+    [class*="border-t"].w-full[style*="margin-bottom"],
+    [class*="border-t"][style*="margin-bottom"] {
+      margin-bottom: 32px !important;
+    }
+    
+    @media (min-width: 768px) {
+      .content-wrapper {
+        padding-left: calc(4rem + 120px);
+        padding-right: 4rem;
+      }
+    }
+    
+    .content-narrow {
+      max-width: 900px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    
+    .content-wide {
+      max-width: 1440px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    
+    /* ========================================
+       IMAGE HANDLING - ROLE-AWARE CONSTRAINTS
+       ======================================== */
+    
+    /* Global image rules - preserve aspect ratio, no distortion */
+    img {
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+      image-rendering: auto;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+    
+    /* Logos - never exceed 20% of slide height, visually subordinate */
+    img.logo {
+      max-height: 20vh;
+      width: auto;
+      object-fit: contain;
+      object-position: center;
+    }
+    
+    /* Graphs and charts - fully readable within single slide */
+    img.graph,
+    img.chart {
+      max-width: 100%;
+      max-height: 80vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      object-position: center;
+    }
+    
+    /* Diagrams - centered, object-contain */
+    img.diagram {
+      max-width: 100%;
+      max-height: 85vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      object-position: center;
+      margin: 0 auto;
+      display: block;
+    }
+    
+    /* Photographic images */
+    img.photo {
+      max-width: 100%;
+      max-height: 90vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      object-position: center;
+    }
+    
+    /* Full-bleed images (only if PDF page is image-only) */
+    img.full-bleed {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    
+    /* Image containers - ensure proper centering */
+    .image-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+    }
+    
+    /* Prevent any image effects not in PDF */
+    img {
+      filter: none !important;
+      box-shadow: none !important;
+      border: none !important;
+      outline: none !important;
+    }
+    
+    /* Only allow effects if explicitly added via class */
+    img.with-shadow {
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    img.with-border {
+      border: 1px solid #EDEEF1;
+    }
+    
+    /* ========================================
+       RESPONSIVE BEHAVIOR - LAYOUT INVARIANTS
+       ======================================== */
+    
+    /* Ensure layout structure remains identical */
+    
+    /* Text wrapping allowed but must remain visible */
+    .slide * {
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+    
+    /* Horizontal scroll behavior identical at all sizes */
+    .flipbook-container {
+      /* No breakpoint-specific changes */
+    }
+    
+    /* Vertical scrolling remains forbidden - except for slides that need it */
+    body,
+    html,
+    .flipbook-container {
+      overflow-y: hidden !important;
+    }
+    
+    /* Allow vertical and horizontal scroll for slides with overflow content */
+    .slide.scrollable {
+      overflow-y: auto !important;
+      overflow-x: auto !important;
+      align-items: flex-start !important;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+      justify-content: flex-start !important;
+      scroll-snap-type: none !important; /* Prevent interference with flipbook navigation */
+      -webkit-overflow-scrolling: touch;
+      height: 100vh !important; /* Fixed height to enable scrolling */
+      max-height: 100vh !important; /* Constrain to viewport */
+      min-height: 100vh !important; /* Ensure minimum viewport height */
+    }
+    
+    .slide.scrollable .content-wrapper {
+      margin-top: 0;
+      margin-bottom: 0;
+      min-width: 100%;
+      width: 100%;
+      max-width: none;
+      padding-bottom: 2rem; /* Extra padding at bottom for scrolling */
+      /* Allow content to expand naturally */
+      height: auto;
+      min-height: auto;
+    }
+    
+    /* Ensure text can expand horizontally if needed */
+    .slide.scrollable * {
+      word-break: keep-all; /* Prevent breaking Chinese characters */
+      overflow-wrap: break-word; /* Allow wrapping for long English words */
+    }
+    
+    /* Make ALL slides scrollable by default to prevent content cropping */
+    
+    /* Override for scrollable slides to allow horizontal scroll too */
+    .slide.scrollable {
+      overflow-x: auto !important;
+    }
+    
+    /* ========================================
+       TEXT SCALING - FINAL LOCK
+       ======================================== */
+    
+    /* All text scaling via clamp() only - no JavaScript scaling */
+    /* No transform: scale() for text */
+    /* No breakpoint-specific font-size overrides */
+    /* Typography classes already defined above with clamp() */
+    
+    /* ========================================
+       PERFORMANCE INTENT - FIDELITY OVER PERFORMANCE
+       ======================================== */
+    
+    /* No lazy loading - all images load immediately */
+    img {
+      loading: eager;
+    }
+    
+    /* No optimization - preserve original quality */
+    img {
+      image-rendering: auto;
+    }
+    
+    /* ========================================
+       COLOR CONTRAST FIXES FOR AAA
+       ======================================== */
+    
+    /* Ensure all text meets AAA contrast requirements */
+    /* #1E1F20 on #F9F9F9 = 15.8:1 ✅ */
+    /* #40444C on #F9F9F9 = 7.2:1 ✅ */
+    /* #6B7280 on #F9F9F9 = 4.8:1 ❌ (changed to #40444C) */
+    /* #B6BAC3 on #F9F9F9 = 2.8:1 ❌ (changed to #40444C) */
+    
+    /* Fix low contrast text - AAA compliant colors */
+    /* Use multiple selector approaches to catch Tailwind arbitrary classes */
+    [class*="text-[#6B7280]"],
+    .text-\\[\\#6B7280\\],
+    *[style*="color: rgb(107, 114, 128)"],
+    *[style*="color: #6B7280"] {
+      color: #40444C !important; /* AAA compliant: 7.2:1 on #F9F9F9 */
+    }
+    
+    [class*="text-[#B6BAC3]"],
+    .text-\\[\\#B6BAC3\\],
+    *[style*="color: rgb(182, 186, 195)"],
+    *[style*="color: #B6BAC3"] {
+      color: #40444C !important; /* AAA compliant: 7.2:1 on #F9F9F9 */
+    }
+    
+    /* Disabled state contrast */
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    
+    button:disabled:focus-visible {
+      outline: 3px solid #6B7280;
+    }
+    
+    /* ========================================
+       FINAL GAP ENFORCEMENT - HIGHEST PRIORITY
+       ======================================== */
+    
+    /* SIMPLE, DIRECT RULE: Ensure 32px gap on ALL slides */
+    .slide-header-line,
+    .slide div[class*="border-t"][class*="EDEEF1"] {
+      margin-bottom: 32px !important;
+    }
+    
+    .slide .content-wrapper,
+    .slide .flex-1.flex {
+      padding-top: 0px !important;
+      margin-top: 0px !important;
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- Skip to main content link -->
+  <a href="#main-content" class="skip-link">跳至主要內容</a>
+  
+  <!-- ARIA live region for slide announcements -->
+  <div id="aria-live-region" class="aria-live" aria-live="polite" aria-atomic="true" role="status"></div>
+
+  <!-- ========================================
+       PROGRESS BAR (TOP)
+       ======================================== -->
+  <div class="fixed top-0 left-0 right-0 h-1 bg-[#EDEEF1] z-30" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="12" aria-label="簡報進度">
+    <div 
+      id="progressFill" 
+      class="h-full bg-gradient-to-r from-[#FBB931] to-[#FF9424] transition-all duration-300" 
+      style="width: 8.33%"
+    ></div>
+  </div>
+
+  <!-- ========================================
+       PAGE COUNTER (TOP-LEFT)
+       ======================================== -->
+  <div class="fixed top-4 left-4 z-20" role="status" aria-live="polite" aria-atomic="true">
+    <div class="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
+      <span class="body-s font-medium text-[#40444C]" aria-label="目前頁面">
+        <span id="currentPage" aria-label="第 1 頁">1</span>
+        <span class="text-[#40444C]" aria-hidden="true"> / </span>
+        <span id="totalPages" aria-label="共 14 頁">14</span>
+      </span>
+    </div>
+  </div>
+
+  <!-- ========================================
+       SIDE ARROW BUTTONS
+       ======================================== -->
+  <button 
+    id="prevArrow" 
+    class="fixed left-4 z-30 p-3 bg-white/90 backdrop-blur-sm rounded-full shadow-lg hover:bg-white transition-colors disabled:opacity-30 disabled:cursor-default"
+    aria-label="上一頁"
+    type="button"
+  >
+    <svg class="w-6 h-6 text-[#1E1F20]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+    </svg>
+  </button>
+
+  <button 
+    id="nextArrow" 
+    class="fixed right-4 z-30 p-3 bg-white/90 backdrop-blur-sm rounded-full shadow-lg hover:bg-white transition-colors"
+    aria-label="下一頁"
+    type="button"
+  >
+    <svg class="w-6 h-6 text-[#1E1F20]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+    </svg>
+  </button>
+
+  <!-- ========================================
+       NAVIGATION DOTS (BOTTOM CENTER)
+       ======================================== -->
+  <nav class="fixed bottom-8 left-1/2 -translate-x-1/2 z-20" aria-label="頁面導航">
+    <div class="flex items-center gap-2 bg-white/90 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg" role="tablist">
+      <button class="dot h-2 rounded-full transition-all bg-[#FBB931] w-8" data-slide="0" aria-label="前往第 1 頁" aria-pressed="true" role="tab" type="button" tabindex="0"></button>
+      <button class="dot h-2 rounded-full transition-all bg-[#D8DBDF] w-2" data-slide="1" aria-label="前往第 2 頁" aria-pressed="false" role="tab" type="button" tabindex="-1"></button>
+      <button class="dot h-2 rounded-full transition-all bg-[#D8DBDF] w-2" data-slide="2" aria-label="前往第 3 頁" aria-pressed="false" role="tab" type="button" tabindex="-1"></button>
+      <button class="dot h-2 rounded-full transition-all bg-[#D8DBDF] w-2" data-slide="3" aria-label="前往第 4 頁" aria-pressed="false" role="tab" type="button" tabindex="-1"></button>
+      <button class="dot h-2 rounded-full transition-all bg-[#D8DBDF] w-2" data-slide="4" aria-label="前往第 5 頁" aria-pressed="false" role="tab" type="button" tabindex="-1"></button>
+      <button class="dot h-2 rounded-full transition-all bg-[#D8DBDF] w-2" data-slide="5" aria-label="前往第 6 頁" aria-pressed="false" role="tab" type="button" tabindex="-1"></button>
+      <button class="dot h-2 rounded-full transition-all bg-[#D8DBDF] w-2" data-slide="6" aria-label="前往第 7 頁" aria-pressed="false" role="tab" type="button" tabindex="-1"></button>
+      <button class="dot h-2 rounded-full transition-all bg-[#D8DBDF] w-2" data-slide="7" aria-label="前往第 8 頁" aria-pressed="false" role="tab" type="button" tabindex="-1"></button>
+      <button class="dot h-2 rounded-full transition-all bg-[#D8DBDF] w-2" data-slide="8" aria-label="前往第 9 頁" aria-pressed="false" role="tab" type="button" tabindex="-1"></button>
+      <button class="dot h-2 rounded-full transition-all bg-[#D8DBDF] w-2" data-slide="9" aria-label="前往第 10 頁" aria-pressed="false" role="tab" type="button" tabindex="-1"></button>
+      <button class="dot h-2 rounded-full transition-all bg-[#D8DBDF] w-2" data-slide="10" aria-label="前往第 11 頁" aria-pressed="false" role="tab" type="button" tabindex="-1"></button>
+      <button class="dot h-2 rounded-full transition-all bg-[#D8DBDF] w-2" data-slide="11" aria-label="前往第 12 頁" aria-pressed="false" role="tab" type="button" tabindex="-1"></button>
+      <button class="dot h-2 rounded-full transition-all bg-[#D8DBDF] w-2" data-slide="12" aria-label="前往第 13 頁" aria-pressed="false" role="tab" type="button" tabindex="-1"></button>
+      <button class="dot h-2 rounded-full transition-all bg-[#D8DBDF] w-2" data-slide="13" aria-label="前往第 14 頁" aria-pressed="false" role="tab" type="button" tabindex="-1"></button>
+    </div>
+  </nav>
+
+  <!-- ========================================
+       FLIPBOOK CONTAINER (HORIZONTAL SCROLL)
+       ======================================== -->
+  <main id="main-content" class="flipbook-container" role="main" aria-label="簡報內容">
+    
+    <!-- ========================================
+         SLIDE 1: TITLE SLIDE
+         ======================================== -->
+    <section class="slide bg-white" aria-label="第 1 頁：標題頁" role="region" style="padding: 0 !important;">
+      <div class="w-full h-full flex flex-col">
+        <!-- Header: Logo and Date at the very top -->
+        <div class="flex justify-between items-center px-8 md:px-16 pt-6 md:pt-8 pb-4" style="padding-left: calc(2rem + 120px);">
+          <img src="Logos/TextLogo.png" alt="MoreHarvest" class="h-6 md:h-8 relative z-10" />
+          <span class="body-s text-[#40444C]">2026</span>
+        </div>
+        
+        <!-- Horizontal Line -->
+        <div class="border-t border-[#EDEEF1] w-full" style="margin-bottom: 32px !important;"></div>
+        
+        <!-- Main Content: Text Left (40-45%), Image Right (55-60%) -->
+        <div class="flex-1 flex flex-col md:flex-row items-center justify-center pb-8 md:pb-12 gap-8 md:gap-12" style="padding-left: calc(2rem + 120px); padding-right: 2rem; padding-top: 0;">
+          <!-- Left: Text (40-45% width) -->
+          <div class="w-full md:w-[45%] flex flex-col justify-center items-start">
+            <h1 class="headline-h1 text-left text-[#40444C]">
+              熊本「中古住宅翻修轉售」
+            </h1>
+          </div>
+          
+          <!-- Right: Circular Image (55-60% width) -->
+          <div class="w-full md:w-[55%] flex items-center justify-center">
+            <div class="w-full max-w-lg aspect-square rounded-full overflow-hidden">
+              <img src="cover_image.png" alt="Mount Fuji" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="w-full h-full bg-gradient-to-b from-blue-200 via-pink-100 to-orange-100 rounded-full flex items-center justify-center" style="display: none;">
+                <span class="body-s text-[#40444C] opacity-50">Image placeholder</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         SLIDE 2: INDEX
+         ======================================== -->
+    <section class="slide scrollable bg-white" aria-label="第 2 頁：目錄" role="region" style="padding: 0 !important;">
+      <div class="w-full h-full flex flex-col relative">
+        <!-- Header: Logo and Date at the very top -->
+        <div class="flex justify-between items-start px-8 md:px-16 pt-6 md:pt-8 pb-2" style="padding-left: calc(2rem + 120px);">
+          <div class="relative z-10" style="display: grid; grid-template-columns: 1fr; gap: 0.5rem; width: fit-content;">
+            <img src="Logos/TextLogo.png" alt="MoreHarvest" class="h-6 md:h-8" style="display: block; margin: 0; padding: 0; grid-column: 1; justify-self: start;" />
+            <div class="headline-h5 text-[#40444C]" style="margin: 0; padding: 0; grid-column: 1; justify-self: start; text-align: left;">00 | 索引</div>
+          </div>
+          <span class="body-s text-[#40444C]">2026</span>
+        </div>
+        
+        <!-- Horizontal Line -->
+        <div class="border-t border-[#EDEEF1] w-full" style="margin-top: 1rem; margin-bottom: 32px !important;"></div>
+        
+        <!-- Main Content: Index Left (40-45%), Image Right (55-60%) -->
+        <div class="flex-1 flex flex-col md:flex-row items-start justify-center pb-8 md:pb-12 gap-8 md:gap-12" style="padding-left: calc(2rem + 120px); padding-right: 2rem; padding-top: 0;">
+          <!-- Left: Index List (40-45% width) -->
+          <div class="w-full md:w-[45%] flex flex-col justify-center">
+            <div class="flex flex-col space-y-4">
+              <div class="flex justify-between items-center">
+                <span class="body-m text-[#40444C]">01 | 交易概覽（Term Sheet 快照）</span>
+                <span class="body-s text-[#40444C]">pg. 3</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="body-m text-[#40444C]">02 | 架構示意</span>
+                <span class="body-s text-[#40444C]">pg. 4</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="body-m text-[#40444C]">03 | 核心條款</span>
+                <span class="body-s text-[#40444C]">pg. 5</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="body-m text-[#40444C]">04 | 單戶採算</span>
+                <span class="body-s text-[#40444C]">pg. 6</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="body-m text-[#40444C]">01 | 擴張到 ¥1.0B</span>
+                <span class="body-s text-[#40444C]">pg. 7</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="body-m text-[#40444C]">02 | 每 cycle 專案損益</span>
+                <span class="body-s text-[#40444C]">pg. 8</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="body-m text-[#40444C]">03 | Waterfall 分配</span>
+                <span class="body-s text-[#40444C]">pg. 9</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="body-m text-[#40444C]">04 | 情境分析</span>
+                <span class="body-s text-[#40444C]">pg. 10</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="body-m text-[#40444C]">05 | 日本預扣稅影響</span>
+                <span class="body-s text-[#40444C]">pg. 11</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="body-m text-[#40444C]">06 | 稅務合規重點</span>
+                <span class="body-s text-[#40444C]">pg. 12</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="body-m text-[#40444C]">07 | 附錄名詞定義</span>
+                <span class="body-s text-[#40444C]">pg. 13</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Right: Circular Image (55-60% width) -->
+          <div class="w-full md:w-[55%] flex items-center justify-center">
+            <div class="w-full max-w-lg aspect-square rounded-full overflow-hidden">
+              <img src="index_image.png" alt="Building" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="w-full h-full bg-gradient-to-b from-gray-200 via-gray-100 to-gray-200 rounded-full flex items-center justify-center" style="display: none;">
+                <span class="body-s text-[#40444C] opacity-50">Image placeholder</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- ========================================
+         SLIDE 3: TRANSACTION OVERVIEW
+         ======================================== -->
+    <section class="slide scrollable bg-white" aria-label="第 3 頁：交易概覽" role="region" style="padding: 0 !important;">
+      <div class="w-full h-full flex flex-col relative">
+        <!-- Header: Logo and Date -->
+        <div class="slide-header">
+          <img src="Logos/TextLogo.png" alt="MoreHarvest" class="h-6 md:h-8 relative z-10" />
+          <span class="body-s text-[#40444C]">2026</span>
+        </div>
+        <div class="slide-header-line"></div>
+        
+        <!-- Content -->
+        <div class="flex-1 content-wrapper relative" style="padding-top: 0; padding-bottom: 0;">
+        <h2 class="headline-h2 mb-4">交易概覽（Term Sheet 快照）</h2>
+        <p class="body-m text-[#40444C] mb-12">以熊本單戶翻修轉售為核心：短週期、可複製、可量化</p>
+        
+        <div class="grid md:grid-cols-2 gap-12">
+          <!-- Left Column -->
+          <div class="space-y-8">
+            <!-- 投資標的與策略 -->
+            <div>
+              <h3 class="headline-h4 mb-4 text-[#FBB931]">投資標的與策略</h3>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <span class="text-[#FBB931] mr-2">•</span>
+                  <p class="body-m">熊本地區：中古一戶建收購 → 翻修 → 轉售</p>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-[#FBB931] mr-2">•</span>
+                  <p class="body-m">目標：每 cycle 25–30 戶，週期化運作（6/9/12 個月）</p>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-[#FBB931] mr-2">•</span>
+                  <p class="body-m">目標資金：¥1.0B（投資人 ¥800M + 管理人 ¥200M）</p>
+                </li>
+              </ul>
+            </div>
+            
+            <!-- Divider -->
+            <div class="border-t border-[#EDEEF1] pt-8">
+              <!-- 現金流來源 -->
+              <div>
+                <h3 class="headline-h4 mb-4 text-[#FBB931]">現金流來源</h3>
+                <ul class="space-y-3">
+                  <li class="flex items-start">
+                    <span class="text-[#FBB931] mr-2">•</span>
+                    <p class="body-m">轉售收入（每戶出售價）</p>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-[#FBB931] mr-2">•</span>
+                    <p class="body-m">利潤：稅後利潤依 waterfall 分配</p>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-[#FBB931] mr-2">•</span>
+                    <p class="body-m">服務費：台灣技術/行銷服務費（營收 3%，需符合移轉訂價與實質）</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Right Column -->
+          <div class="space-y-8">
+            <!-- 關鍵經濟條款 -->
+            <div>
+              <h3 class="headline-h4 mb-4 text-[#FBB931]">關鍵經濟條款（對外呈現）</h3>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <span class="text-[#FBB931] mr-2">•</span>
+                  <p class="body-m">投資人：優先股（Preferred Shares），享 5% Preferred Return（Hurdle）</p>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-[#FBB931] mr-2">•</span>
+                  <p class="body-m">管理人：普通股（Common Shares）+ 績效費 20%（稅後利潤基礎）</p>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-[#FBB931] mr-2">•</span>
+                  <p class="body-m">管理費：0%</p>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-[#FBB931] mr-2">•</span>
+                  <p class="body-m">稅務：日本 KK 依公司稅制（模型採 35%）</p>
+                </li>
+              </ul>
+            </div>
+            
+            <!-- Divider -->
+            <div class="border-t border-[#EDEEF1] pt-8">
+              <!-- 週期 -->
+              <div>
+                <h3 class="headline-h4 mb-4 text-[#FBB931]">週期（Cycle）</h3>
+                <ul class="space-y-3">
+                  <li class="flex items-start">
+                    <span class="text-[#FBB931] mr-2">•</span>
+                    <p class="body-m">Bear：12 個月/ cycle（1.0 次/年）</p>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-[#FBB931] mr-2">•</span>
+                    <p class="body-m">Average：9 個月/ cycle（1.33 次/年）</p>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-[#FBB931] mr-2">•</span>
+                    <p class="body-m">Bull：6 個月/ cycle（2.0 次/年）</p>
+                  </li>
+                </ul>
+                <p class="body-xs text-[#40444C] mt-4">備註：週期越短，年度可重複次數越高，現金收益率提升</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        
+        <!-- Page Number Footer -->
+        <div class="page-number-footer">
+          <p class="body-xs text-[#40444C]">3</p>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         SLIDE 4: ARCHITECTURE DIAGRAM
+         ======================================== -->
+    <section class="slide scrollable bg-[#F9F9F9]" aria-label="第 4 頁：架構示意" role="region" style="padding: 0 !important;">
+      <div class="w-full h-full flex flex-col relative">
+        <!-- Header: Logo and Date -->
+        <div class="slide-header">
+          <img src="Logos/TextLogo.png" alt="MoreHarvest" class="h-6 md:h-8 relative z-10" />
+          <span class="body-s text-[#40444C]">2026</span>
+        </div>
+        <div class="slide-header-line"></div>
+        
+        <!-- Content -->
+        <div class="flex-1 content-wrapper relative" style="padding-top: 0; padding-bottom: 0;">
+        <h2 class="headline-h2 mb-8">架構示意（對外投資人可用版本）</h2>
+        <p class="body-m text-[#6B7280] mb-8">投資人對外為股權工具；稅盾（如採用）為內部公司間融資安排</p>
+        
+        <div class="bg-white p-8 rounded-lg shadow-lg">
+          <div class="grid md:grid-cols-3 gap-8 items-start">
+            <!-- Left: Investors -->
+            <div class="text-center">
+              <div class="bg-[#F9F9F9] p-6 rounded-lg mb-4">
+                <h3 class="headline-h5 mb-2">投資人（LP/HNW）</h3>
+                <p class="body-m text-[#FBB931] font-semibold">出資 ¥800M</p>
+              </div>
+              <div class="bg-[#F9F9F9] p-6 rounded-lg">
+                <h3 class="headline-h5 mb-2">管理人（GP/Founder）</h3>
+                <p class="body-m text-[#FBB931] font-semibold">出資 ¥200M</p>
+              </div>
+            </div>
+            
+            <!-- Center: BVI/Cayman -->
+            <div class="text-center">
+              <div class="bg-[#F9F9F9] p-6 rounded-lg mb-4">
+                <h3 class="headline-h5 mb-3">BVI / Cayman Feeder</h3>
+                <ul class="space-y-2 text-left">
+                  <li class="body-s">• 優先股（投資人）</li>
+                  <li class="body-s">• 普通股（管理人）</li>
+                </ul>
+              </div>
+              <div class="flex flex-col gap-2">
+                <div class="bg-[#EDEEF1] p-4 rounded">
+                  <p class="body-s">認購優先股</p>
+                </div>
+                <div class="bg-[#EDEEF1] p-4 rounded">
+                  <p class="body-s">認購普通股</p>
+                </div>
+                <div class="bg-[#EDEEF1] p-4 rounded">
+                  <p class="body-s">（可選）公司間借款</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Right: Japan KK -->
+            <div class="text-center">
+              <div class="bg-[#F9F9F9] p-6 rounded-lg mb-4">
+                <h3 class="headline-h5 mb-2">日本營運 KK（熊本）</h3>
+                <ul class="space-y-2 text-left">
+                  <li class="body-s">• 收購/翻修/轉售</li>
+                  <li class="body-s">• 日本公司稅（模型 35%）</li>
+                </ul>
+              </div>
+              <div class="bg-[#F9F9F9] p-6 rounded-lg">
+                <h3 class="headline-h5 mb-2">台灣服務公司</h3>
+                <p class="body-s">技術/行銷服務費：營收 3%（稅盾）</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-8 pt-8 border-t border-[#EDEEF1]">
+            <p class="body-xs text-[#6B7280]">投資人對外＝股權工具；「5%」以 Preferred Return/ Hurdle 呈現（避免被解讀為放款產品）。</p>
+          </div>
+        </div>
+        </div>
+        
+        <!-- Page Number Footer -->
+        <div class="page-number-footer">
+          <p class="body-xs text-[#40444C]">4</p>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         SLIDE 5: CORE TERMS
+         ======================================== -->
+    <section class="slide scrollable bg-white" aria-label="第 5 頁：核心條款" role="region" style="padding: 0 !important;">
+      <div class="w-full h-full flex flex-col relative">
+        <!-- Header: Logo and Date -->
+        <div class="slide-header">
+          <img src="Logos/TextLogo.png" alt="MoreHarvest" class="h-6 md:h-8 relative z-10" />
+          <span class="body-s text-[#40444C]">2026</span>
+        </div>
+        <div class="slide-header-line"></div>
+        
+        <!-- Content -->
+        <div class="flex-1 content-wrapper relative" style="padding-top: 0 !important; padding-bottom: 0; min-width: max-content; width: 100%; max-width: none;">
+        <h2 class="headline-h2 mb-6">核心條款（投資人對外版本）</h2>
+        <p class="body-m text-[#40444C] mb-6">建議用語：Preferred Return / 優先分配（避免「利息」描述）</p>
+        
+        <div class="space-y-4" style="min-width: max-content;">
+          <div class="bg-[#F9F9F9] p-5 rounded-lg" style="min-width: max-content;">
+            <h3 class="headline-h5 mb-2 text-[#FBB931] whitespace-normal">• 募集規模：¥1.0B（投資人 ¥800M 優先股；管理人 ¥200M 普通股）</h3>
+          </div>
+          
+          <div class="bg-[#F9F9F9] p-5 rounded-lg" style="min-width: max-content;">
+            <h3 class="headline-h5 mb-2 text-[#FBB931] whitespace-normal">• 費用：0% 管理費；績效費（Carry）= 稅後利潤的 20%</h3>
+          </div>
+          
+          <div class="bg-[#F9F9F9] p-5 rounded-lg" style="min-width: max-content;">
+            <h3 class="headline-h5 mb-2 text-[#FBB931] whitespace-normal">• 優先報酬：投資人優先股享 5% Preferred Return（可設定為每 cycle 或年化；建議明確定義）</h3>
+          </div>
+          
+          <div class="bg-[#F9F9F9] p-5 rounded-lg" style="min-width: max-content;">
+            <h3 class="headline-h5 mb-2 text-[#FBB931] whitespace-normal">• 分配順序（概念）：(1) 支付累積 Preferred Return → (2)（可選）返還優先股本金 → (3) 支付績效費 → (4) 剩餘利潤依 80/20 分配</h3>
+          </div>
+          
+          <div class="bg-[#F9F9F9] p-5 rounded-lg" style="min-width: max-content;">
+            <h3 class="headline-h5 mb-2 text-[#FBB931] whitespace-normal">• 報告/治理：每 cycle 成交與成本明細、資金使用、已售/在售庫存、現金結餘與下一 cycle 佈局</h3>
+          </div>
+          
+          <div class="bg-[#F9F9F9] p-5 rounded-lg" style="min-width: max-content;">
+            <h3 class="headline-h5 mb-2 text-[#FBB931] whitespace-normal">• 風險揭露：市場售價波動、工期延誤、成本上升、稅務/預扣稅、移轉訂價與合規等</h3>
+          </div>
+        </div>
+        
+        <p class="body-xs text-[#40444C] mt-6 whitespace-normal">備註：若內部採公司間借款以產生日本利息費用稅盾，須同時評估日本利息扣除限制與對境外利息/股利之預扣稅對「淨到投資人」的影響。</p>
+        
+        <!-- Page Number Footer -->
+        <div class="page-number-footer">
+          <p class="body-xs text-[#40444C]">5</p>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         SLIDE 6: SINGLE UNIT CALCULATION
+         ======================================== -->
+    <section class="slide scrollable bg-[#F9F9F9]" aria-label="第 6 頁：單戶採算" role="region" style="padding: 0 !important;">
+      <div class="w-full h-full flex flex-col relative">
+        <!-- Header: Logo and Date -->
+        <div class="slide-header">
+          <img src="Logos/TextLogo.png" alt="MoreHarvest" class="h-6 md:h-8 relative z-10" />
+          <span class="body-s text-[#40444C]">2026</span>
+        </div>
+        <div class="slide-header-line"></div>
+        
+        <!-- Content -->
+        <div class="flex-1 content-wrapper relative" style="padding-top: 0; padding-bottom: 0;">
+        <h2 class="headline-h2 mb-8">單戶採算（Excel 兩個案例）</h2>
+        <p class="body-m text-[#6B7280] mb-8">Case A / Case B：用於估算每戶投入資金、售價與費用結構</p>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Case A -->
+          <div class="bg-white p-8 rounded-lg shadow-lg">
+            <h3 class="headline-h4 mb-6 text-[#FBB931]">Case A（每戶）</h3>
+            <div class="space-y-4">
+              <div class="flex justify-between items-center pb-4 border-b border-[#EDEEF1]">
+                <span class="body-m">投入資金：</span>
+                <span class="headline-h5">¥32.62M</span>
+              </div>
+              <div class="flex justify-between items-center pb-4 border-b border-[#EDEEF1]">
+                <span class="body-m">售價：</span>
+                <span class="headline-h5">¥42.00M</span>
+              </div>
+              <div class="pt-2">
+                <p class="body-s font-semibold mb-3">銷售成本：</p>
+                <ul class="space-y-2 ml-4">
+                  <li class="body-s">• 仲介：¥1.26M</li>
+                  <li class="body-s">• 瑕疵保固：¥1.244M</li>
+                  <li class="body-s">• 雜費：¥0.80M</li>
+                </ul>
+              </div>
+              <div class="pt-2">
+                <p class="body-s font-semibold">融資/利息線：</p>
+                <p class="body-s ml-4">5% × 投入資金 = ¥1.631M</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Case B -->
+          <div class="bg-white p-8 rounded-lg shadow-lg">
+            <h3 class="headline-h4 mb-6 text-[#FBB931]">Case B（每戶）</h3>
+            <div class="space-y-4">
+              <div class="flex justify-between items-center pb-4 border-b border-[#EDEEF1]">
+                <span class="body-m">投入資金：</span>
+                <span class="headline-h5">¥33.87M</span>
+              </div>
+              <div class="flex justify-between items-center pb-4 border-b border-[#EDEEF1]">
+                <span class="body-m">售價：</span>
+                <span class="headline-h5">¥43.00M</span>
+              </div>
+              <div class="pt-2">
+                <p class="body-s font-semibold mb-3">銷售成本：</p>
+                <ul class="space-y-2 ml-4">
+                  <li class="body-s">• 仲介：¥1.29M</li>
+                  <li class="body-s">• 瑕疵保固：¥1.349M</li>
+                  <li class="body-s">• 雜費：¥0.80M</li>
+                </ul>
+              </div>
+              <div class="pt-2">
+                <p class="body-s font-semibold">融資/利息線：</p>
+                <p class="body-s ml-4">5% × 投入資金 = ¥1.693M</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <p class="body-m text-[#6B7280] mt-8 text-center">額外稅盾：台灣技術/行銷服務費 = 營收 3%/cycle（需實質與移轉訂價支持）</p>
+        <!-- Page Number Footer -->
+        <div class="page-number-footer">
+          <p class="body-xs text-[#40444C]">6</p>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         SLIDE 7: SCALING TO 1.0B
+         ======================================== -->
+    <section class="slide scrollable bg-white" aria-label="第 7 頁：擴張到 1.0B" role="region" style="padding: 0 !important;">
+      <div class="w-full h-full flex flex-col relative">
+        <!-- Header: Logo and Date -->
+        <div class="slide-header">
+          <img src="Logos/TextLogo.png" alt="MoreHarvest" class="h-6 md:h-8 relative z-10" />
+          <span class="body-s text-[#40444C]">2026</span>
+        </div>
+        <div class="slide-header-line"></div>
+        
+        <!-- Content -->
+        <div class="flex-1 content-wrapper relative" style="padding-top: 0; padding-bottom: 0;">
+        <h2 class="headline-h2 mb-8">擴張到 ¥1.0B：每 cycle 30 戶（A/B 各 15 戶）</h2>
+        <p class="body-m text-[#6B7280] mb-8">以混合後每戶約 ¥33.25M 投入估算，可在單一 cycle 部署約 30 戶</p>
+        
+        <div class="grid md:grid-cols-2 gap-8 md:gap-12">
+          <!-- Left Column -->
+          <div>
+            <h3 class="headline-h4 mb-6 text-[#FBB931]">資金配置</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <span class="text-[#FBB931] mr-2">•</span>
+                <div>
+                  <p class="body-m">總資金：¥1,000M（投資人 ¥800M 優先股 + 管理人 ¥200M 普通股）</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-[#FBB931] mr-2">•</span>
+                <div>
+                  <p class="body-m">每 cycle 部署：30 戶（Case A 15 戶 + Case B 15 戶；50/50 mix）</p>
+                </div>
+              </li>
+            </ul>
+            
+            <h3 class="headline-h4 mb-6 text-[#FBB931] mt-8">Cycle 情境</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <span class="text-[#FBB931] mr-2">•</span>
+                <div>
+                  <p class="body-m">Bear：12 個月/ cycle（1.0 次/年）</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-[#FBB931] mr-2">•</span>
+                <div>
+                  <p class="body-m">Average：9 個月/ cycle（1.33 次/年）</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-[#FBB931] mr-2">•</span>
+                <div>
+                  <p class="body-m">Bull：6 個月/ cycle（2.0 次/年）</p>
+                </div>
+              </li>
+            </ul>
+            <p class="body-xs text-[#6B7280] mt-4">意涵：週期越短 → 資金周轉越快 → 年度可複製次數越多</p>
+          </div>
+          
+          <!-- Right Column -->
+          <div>
+            <h3 class="headline-h4 mb-6 text-[#FBB931]">運營節奏（示例）</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <span class="text-[#FBB931] mr-2">•</span>
+                <div>
+                  <p class="body-m font-semibold">收購：</p>
+                  <p class="body-s text-[#6B7280]">鎖定區域/屋況可控/轉售流動性佳</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-[#FBB931] mr-2">•</span>
+                <div>
+                  <p class="body-m font-semibold">翻修：</p>
+                  <p class="body-s text-[#6B7280]">標準化施工規格與工期管理</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-[#FBB931] mr-2">•</span>
+                <div>
+                  <p class="body-m font-semibold">出售：</p>
+                  <p class="body-s text-[#6B7280]">合作通路 + 定價策略 + 交屋流程</p>
+                </div>
+              </li>
+            </ul>
+            
+            <div class="mt-8 bg-[#F9F9F9] p-6 rounded-lg">
+              <p class="body-m font-semibold mb-2">KPI：</p>
+              <p class="body-s text-[#6B7280]">成交天數、工期、每戶成本偏差、毛利、庫存週轉</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Page Number Footer -->
+        <div class="page-number-footer">
+          <p class="body-xs text-[#40444C]">7</p>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         SLIDE 8: CYCLE P&L
+         ======================================== -->
+    <section class="slide scrollable bg-[#F9F9F9]" aria-label="第 8 頁：每 cycle 專案損益" role="region" style="padding: 0 !important;">
+      <div class="w-full h-full flex flex-col relative">
+        <!-- Header: Logo and Date -->
+        <div class="slide-header">
+          <img src="Logos/TextLogo.png" alt="MoreHarvest" class="h-6 md:h-8 relative z-10" />
+          <span class="body-s text-[#40444C]">2026</span>
+        </div>
+        <div class="slide-header-line"></div>
+        
+        <!-- Content -->
+        <div class="flex-1 content-wrapper relative" style="padding-top: 0; padding-bottom: 0;">
+        <h2 class="headline-h2 mb-8">每 cycle 專案損益（30 戶、50/50 mix）</h2>
+        <p class="body-m text-[#6B7280] mb-8">稅前利益已扣除：5% 利息費用 + 3% 台灣服務費</p>
+        
+        <div class="bg-white p-8 rounded-lg shadow-lg">
+          <div class="overflow-x-auto">
+            <table class="w-full border-collapse">
+              <tbody>
+                <tr>
+                  <td class="p-4 body-m font-semibold">營收（30 × ¥42.5M）</td>
+                  <td class="p-4 body-m text-right">¥1,275.000M</td>
+                </tr>
+                <tr class="border-t border-[#EDEEF1]">
+                  <td class="p-4 body-s pl-8">- 購入+翻修資本</td>
+                  <td class="p-4 body-s text-right">¥997.353M</td>
+                </tr>
+                <tr>
+                  <td class="p-4 body-s pl-8">- 仲介費</td>
+                  <td class="p-4 body-s text-right">¥38.250M</td>
+                </tr>
+                <tr>
+                  <td class="p-4 body-s pl-8">- 瑕疵保固</td>
+                  <td class="p-4 body-s text-right">¥38.895M</td>
+                </tr>
+                <tr>
+                  <td class="p-4 body-s pl-8">- 雜費</td>
+                  <td class="p-4 body-s text-right">¥24.000M</td>
+                </tr>
+                <tr>
+                  <td class="p-4 body-s pl-8">- 利息費用（5%/cycle）</td>
+                  <td class="p-4 body-s text-right">¥49.868M</td>
+                </tr>
+                <tr>
+                  <td class="p-4 body-s pl-8">- 台灣服務費（營收 3%）</td>
+                  <td class="p-4 body-s text-right">¥38.250M</td>
+                </tr>
+                <tr class="border-t-2 border-[#EDEEF1]">
+                  <td class="p-4 body-m font-semibold">= 日本稅前利益（PBT）</td>
+                  <td class="p-4 body-m text-right text-[#19B64E]">¥88.384M</td>
+                </tr>
+                <tr>
+                  <td class="p-4 body-s pl-8">- 日本公司稅（35%）</td>
+                  <td class="p-4 body-s text-right">¥30.935M</td>
+                </tr>
+                <tr class="border-t-2 border-[#FBB931]">
+                  <td class="p-4 body-m font-semibold">= 稅後利益（PAT）</td>
+                  <td class="p-4 body-m text-right text-[#FBB931] font-bold">¥57.450M</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <p class="body-xs text-[#6B7280] mt-6">提醒：若利息費用採公司間借款，需同時評估日本利息扣除限制與對境外支付的預扣稅（WHT）對淨回收的影響。</p>
+        <!-- Page Number Footer -->
+        <div class="page-number-footer">
+          <p class="body-xs text-[#40444C]">8</p>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         SLIDE 8: WATERFALL DISTRIBUTION
+         ======================================== -->
+    <section class="slide scrollable bg-white" aria-label="第 9 頁：Waterfall 分配" role="region" style="padding: 0 !important;">
+      <div class="w-full h-full flex flex-col relative">
+        <!-- Header: Logo and Date -->
+        <div class="slide-header">
+          <img src="Logos/TextLogo.png" alt="MoreHarvest" class="h-6 md:h-8 relative z-10" />
+          <span class="body-s text-[#40444C]">2026</span>
+        </div>
+        <div class="slide-header-line"></div>
+        
+        <!-- Content -->
+        <div class="flex-1 content-wrapper relative" style="padding-top: 0; padding-bottom: 0;">
+        <h2 class="headline-h2 mb-8">Waterfall 分配（示例：每 cycle）</h2>
+        <p class="body-m text-[#6B7280] mb-8">基於稅後利益 ¥57.450M；績效費 20%（稅後利潤基礎）</p>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Left: Distribution Steps -->
+          <div>
+            <h3 class="headline-h4 mb-6 text-[#FBB931]">分配步驟（概念）</h3>
+            <ol class="space-y-4">
+              <li class="flex items-start">
+                <span class="text-[#FBB931] mr-2 font-bold">1)</span>
+                <div>
+                  <p class="body-m font-semibold">支付優先報酬（5% Preferred Return）</p>
+                  <ul class="mt-2 space-y-1 ml-4">
+                    <li class="body-s">• 投資人：¥40.0M / cycle</li>
+                    <li class="body-s">• 管理人：¥10.0M / cycle</li>
+                  </ul>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-[#FBB931] mr-2 font-bold">2)</span>
+                <p class="body-m">日本公司稅：模型以 35% 計（已反映在稅後利益）</p>
+              </li>
+              <li class="flex items-start">
+                <span class="text-[#FBB931] mr-2 font-bold">3)</span>
+                <p class="body-m">績效費：稅後利益的 20%</p>
+              </li>
+              <li class="flex items-start">
+                <span class="text-[#FBB931] mr-2 font-bold">4)</span>
+                <p class="body-m">剩餘稅後利潤依 80/20 分配（投資人/管理人）</p>
+              </li>
+            </ol>
+          </div>
+          
+          <!-- Right: Numbers -->
+          <div>
+            <h3 class="headline-h4 mb-6 text-[#FBB931]">每 cycle 數字（基準版，不含 WHT）</h3>
+            <div class="bg-[#F9F9F9] p-6 rounded-lg space-y-4">
+              <div class="flex justify-between items-center pb-4 border-b border-[#EDEEF1]">
+                <span class="body-s">稅後利益（PAT）</span>
+                <span class="body-m font-semibold">¥57.450M</span>
+              </div>
+              <div class="flex justify-between items-center pb-4 border-b border-[#EDEEF1]">
+                <span class="body-s">績效費（20% × PAT）</span>
+                <span class="body-m">¥11.490M</span>
+              </div>
+              <div class="flex justify-between items-center pb-4 border-b border-[#EDEEF1]">
+                <span class="body-s">可分配稅後利潤（PAT - 績效費）</span>
+                <span class="body-m">¥45.960M</span>
+              </div>
+              <div class="flex justify-between items-center pb-4 border-b border-[#EDEEF1]">
+                <span class="body-s">投資人分紅（80%）</span>
+                <span class="body-m text-[#19B64E]">¥36.768M</span>
+              </div>
+              <div class="flex justify-between items-center pb-4 border-b border-[#EDEEF1]">
+                <span class="body-s">管理人分紅（20%）</span>
+                <span class="body-m">¥9.192M</span>
+              </div>
+              <div class="flex justify-between items-center pt-4 border-t-2 border-[#FBB931]">
+                <span class="body-m font-semibold">投資人合計（含 5% Preferred Return）</span>
+                <span class="headline-h5 text-[#FBB931]">¥76.768M</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="body-m font-semibold">管理人合計（含 5% + 3% 服務費）</span>
+                <span class="headline-h5 text-[#FBB931]">¥68.932M</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <p class="body-xs text-[#6B7280] mt-8">備註：投資人對外不以「利息」描述；內部若採公司間借款，會另受 WHT 與利息扣除限制影響。</p>
+        <!-- Page Number Footer -->
+        <div class="page-number-footer">
+          <p class="body-xs text-[#40444C]">9</p>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         SLIDE 10: SCENARIO ANALYSIS
+         ======================================== -->
+    <section class="slide scrollable bg-[#F9F9F9]" aria-label="第 10 頁：情境分析" role="region" style="padding: 0 !important;">
+      <div class="w-full h-full flex flex-col relative">
+        <!-- Header: Logo and Date -->
+        <div class="slide-header">
+          <img src="Logos/TextLogo.png" alt="MoreHarvest" class="h-6 md:h-8 relative z-10" />
+          <span class="body-s text-[#40444C]">2026</span>
+        </div>
+        <div class="slide-header-line"></div>
+        
+        <!-- Content -->
+        <div class="flex-1 content-wrapper relative" style="padding-top: 0; padding-bottom: 0;">
+        <h2 class="headline-h2 mb-8">情境分析：投資人與管理人收入（基準版）</h2>
+        <p class="body-m text-[#6B7280] mb-8">差異僅在週期長短→每年 cycle 次數不同；每 cycle 經濟假設相同</p>
+        
+        <div class="bg-white p-8 rounded-lg shadow-lg mb-8">
+          <div class="grid md:grid-cols-2 gap-8 mb-8">
+            <div>
+              <h3 class="headline-h5 mb-4 text-[#FBB931]">投資人（¥800M）</h3>
+              <p class="body-s mb-2">每 cycle：¥76.768M</p>
+              <p class="body-xs text-[#6B7280]">（Preferred Return ¥40.0M + 分紅 ¥36.768M）</p>
+            </div>
+            <div>
+              <h3 class="headline-h5 mb-4 text-[#FBB931]">管理人（¥200M + 管理角色）</h3>
+              <p class="body-s mb-2">每 cycle：¥68.932M</p>
+              <p class="body-xs text-[#6B7280]">（5% ¥10.0M + 3% 服務費 ¥38.25M + 分紅 ¥9.192M + 績效費 ¥11.49M）</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-white p-8 rounded-lg shadow-lg">
+          <div class="overflow-x-auto">
+            <table class="w-full border-collapse">
+              <thead>
+                <tr class="border-b-2 border-[#EDEEF1]">
+                  <th class="text-left p-4 headline-h5">情境</th>
+                  <th class="text-left p-4 headline-h5">Cycles/年</th>
+                  <th class="text-right p-4 headline-h5">投資人/年</th>
+                  <th class="text-right p-4 headline-h5">投資人年化現金收益率</th>
+                  <th class="text-right p-4 headline-h5">管理人/年</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-[#EDEEF1]">
+                  <td class="p-4 body-s">Bear（12m）</td>
+                  <td class="p-4 body-s">1.0</td>
+                  <td class="p-4 body-s text-right">¥76.768M</td>
+                  <td class="p-4 body-s text-right text-[#19B64E] font-semibold">9.60%</td>
+                  <td class="p-4 body-s text-right">¥68.932M</td>
+                </tr>
+                <tr class="border-b border-[#EDEEF1]">
+                  <td class="p-4 body-s">Average（9m）</td>
+                  <td class="p-4 body-s">1.33</td>
+                  <td class="p-4 body-s text-right">¥102.357M</td>
+                  <td class="p-4 body-s text-right text-[#19B64E] font-semibold">12.79%</td>
+                  <td class="p-4 body-s text-right">¥91.909M</td>
+                </tr>
+                <tr>
+                  <td class="p-4 body-s">Bull（6m）</td>
+                  <td class="p-4 body-s">2.0</td>
+                  <td class="p-4 body-s text-right">¥153.536M</td>
+                  <td class="p-4 body-s text-right text-[#19B64E] font-semibold">19.19%</td>
+                  <td class="p-4 body-s text-right">¥137.864M</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        
+        <p class="body-xs text-[#6B7280] mt-6">註：上述為「不含日本預扣稅（WHT）流失」之基準版。若上層現金回流涉及境外利息/股利支付，需另行呈現「淨到投資人」版本。</p>
+        <!-- Page Number Footer -->
+        <div class="page-number-footer">
+          <p class="body-xs text-[#40444C]">10</p>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         SLIDE 11: WHT COMPARISON
+         ======================================== -->
+    <section class="slide scrollable bg-white" aria-label="第 11 頁：日本預扣稅影響" role="region" style="padding: 0 !important;">
+      <div class="w-full h-full flex flex-col relative">
+        <!-- Header: Logo and Date -->
+        <div class="slide-header">
+          <img src="Logos/TextLogo.png" alt="MoreHarvest" class="h-6 md:h-8 relative z-10" />
+          <span class="body-s text-[#40444C]">2026</span>
+        </div>
+        <div class="slide-header-line"></div>
+        
+        <!-- Content -->
+        <div class="flex-1 content-wrapper relative" style="padding-top: 0; padding-bottom: 0;">
+        <h2 class="headline-h2 mb-8">日本預扣稅（WHT）對「淨到投資人」的影響（比較）</h2>
+        <p class="body-m text-[#6B7280] mb-8">示例：BVI 收款 vs 台灣條約收款（僅作敏感度；實務以稅務顧問為準）</p>
+        
+        <div class="bg-[#F9F9F9] p-6 rounded-lg mb-8">
+          <h3 class="headline-h4 mb-4 text-[#FBB931]">核心結論（以 30 戶/cycle、50/50 mix 示範）</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <span class="text-[#FBB931] mr-2">•</span>
+              <p class="body-m">BVI（無條約）假設：利息/股利 WHT 20.42% → 投資人淨額/ cycle 約 ¥61.092M</p>
+            </li>
+            <li class="flex items-start">
+              <span class="text-[#FBB931] mr-2">•</span>
+              <p class="body-m">台灣條約收款假設：利息/股利 WHT 10% → 投資人淨額/ cycle 約 ¥69.091M</p>
+            </li>
+            <li class="flex items-start">
+              <span class="text-[#FBB931] mr-2">•</span>
+              <p class="body-m">差異：投資人每 cycle 淨額約 +¥7.999M（週期越多，年度差異越大）</p>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="bg-white p-8 rounded-lg shadow-lg">
+          <h3 class="headline-h4 mb-6 text-[#FBB931]">投資人淨額（示例）</h3>
+          <div class="overflow-x-auto">
+            <table class="w-full border-collapse">
+              <thead>
+                <tr class="border-b-2 border-[#EDEEF1]">
+                  <th class="text-left p-4 headline-h5">情境</th>
+                  <th class="text-left p-4 headline-h5">Cycles/年</th>
+                  <th class="text-right p-4 headline-h5">BVI 淨額/年</th>
+                  <th class="text-right p-4 headline-h5">台灣條約 淨額/年</th>
+                  <th class="text-right p-4 headline-h5">差異</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-[#EDEEF1]">
+                  <td class="p-4 body-s">Bear（12m）</td>
+                  <td class="p-4 body-s">1.0</td>
+                  <td class="p-4 body-s text-right">¥61.092M</td>
+                  <td class="p-4 body-s text-right text-[#19B64E]">¥69.091M</td>
+                  <td class="p-4 body-s text-right text-[#FBB931] font-semibold">+¥7.999M</td>
+                </tr>
+                <tr class="border-b border-[#EDEEF1]">
+                  <td class="p-4 body-s">Average（9m）</td>
+                  <td class="p-4 body-s">1.33</td>
+                  <td class="p-4 body-s text-right">¥81.456M</td>
+                  <td class="p-4 body-s text-right text-[#19B64E]">¥92.121M</td>
+                  <td class="p-4 body-s text-right text-[#FBB931] font-semibold">+¥10.666M</td>
+                </tr>
+                <tr>
+                  <td class="p-4 body-s">Bull（6m）</td>
+                  <td class="p-4 body-s">2.0</td>
+                  <td class="p-4 body-s text-right">¥122.184M</td>
+                  <td class="p-4 body-s text-right text-[#19B64E]">¥138.182M</td>
+                  <td class="p-4 body-s text-right text-[#FBB931] font-semibold">+¥15.998M</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        
+        <p class="body-xs text-[#6B7280] mt-6">備註：此頁為敏感度展示。條約適用性（實質/受益所有人/申請文件）與付款性質（利息/股利/服務費）認定，將直接影響實際 WHT。</p>
+        <!-- Page Number Footer -->
+        <div class="page-number-footer">
+          <p class="body-xs text-[#40444C]">11</p>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         SLIDE 12: TAX/COMPLIANCE
+         ======================================== -->
+    <section class="slide scrollable bg-[#F9F9F9]" aria-label="第 12 頁：稅務合規重點" role="region" style="padding: 0 !important;">
+      <div class="w-full h-full flex flex-col relative">
+        <!-- Header: Logo and Date -->
+        <div class="slide-header">
+          <img src="Logos/TextLogo.png" alt="MoreHarvest" class="h-6 md:h-8 relative z-10" />
+          <span class="body-s text-[#40444C]">2026</span>
+        </div>
+        <div class="slide-header-line"></div>
+        
+        <!-- Content -->
+        <div class="flex-1 content-wrapper relative" style="padding-top: 0 !important; padding-bottom: 0; min-width: max-content; width: 100%; max-width: none;">
+        <h2 class="headline-h2 mb-6">稅務/合規重點（投資人摘要）</h2>
+        <p class="body-m text-[#40444C] mb-6">聚焦：稅盾可行性、預扣稅、移轉訂價與台灣募資合規</p>
+        
+        <div class="space-y-4" style="min-width: max-content;">
+          <div class="bg-white p-5 rounded-lg shadow-md" style="min-width: max-content;">
+            <h3 class="headline-h5 mb-4 text-[#FBB931]">需由顧問確認的關鍵點（不在本摘要中做法律意見）</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <span class="text-[#FBB931] mr-2">•</span>
+                <div>
+                  <p class="body-m font-semibold mb-1 whitespace-normal">日本利息稅盾：</p>
+                  <p class="body-s text-[#40444C] whitespace-normal">公司間借款需具備真實性、合理條件與文件；並留意日本利息扣除限制（earnings stripping 等）。</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-[#FBB931] mr-2">•</span>
+                <div>
+                  <p class="body-m font-semibold mb-1 whitespace-normal">日本預扣稅（WHT）：</p>
+                  <p class="body-s text-[#40444C] whitespace-normal">日本對境外支付利息/股利可能扣繳；無條約地區通常較高。</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-[#FBB931] mr-2">•</span>
+                <div>
+                  <p class="body-m font-semibold mb-1 whitespace-normal">台灣服務費（3%）：</p>
+                  <p class="body-s text-[#40444C] whitespace-normal">需具備實質服務與移轉訂價支持，並妥善控制「日本常設機構（PE）」風險。</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-[#FBB931] mr-2">•</span>
+                <div>
+                  <p class="body-m font-semibold mb-1 whitespace-normal">台灣募資合規：</p>
+                  <p class="body-s text-[#40444C] whitespace-normal">投資人對外呈現為股權/基金權益（Preferred Return），避免以「借款/利息/保本」方式行銷；具體私募要件以台灣律師意見為準。</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-[#FBB931] mr-2">•</span>
+                <div>
+                  <p class="body-m font-semibold mb-1 whitespace-normal">稅率假設：</p>
+                  <p class="body-s text-[#40444C] whitespace-normal">模型以 35% 示範；實際有效稅率需依日本 KK 規模/所在地而定。</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="bg-[#FBB931]/10 border-l-4 border-[#FBB931] p-5 rounded-lg mt-6">
+          <p class="body-m font-semibold text-[#1E1F20]">投資人文件建議：</p>
+          <p class="body-s text-[#40444C] mt-2 whitespace-normal">以「經濟條款」呈現回報（Preferred Return / 分配順序 / 風險揭露），避免將投資描述為放款或保本產品。</p>
+        </div>
+        
+        <!-- Page Number Footer -->
+        <div class="page-number-footer">
+          <p class="body-xs text-[#40444C]">12</p>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         SLIDE 13: GLOSSARY
+         ======================================== -->
+    <section class="slide scrollable bg-white" aria-label="第 13 頁：附錄名詞定義" role="region" style="padding: 0 !important;">
+      <div class="w-full h-full flex flex-col relative">
+        <!-- Header: Logo and Date -->
+        <div class="slide-header">
+          <img src="Logos/TextLogo.png" alt="MoreHarvest" class="h-6 md:h-8 relative z-10" />
+          <span class="body-s text-[#40444C]">2026</span>
+        </div>
+        <div class="slide-header-line"></div>
+        
+        <!-- Content -->
+        <div class="flex-1 content-wrapper relative" style="padding-top: 0; padding-bottom: 0;">
+        <h2 class="headline-h2 mb-8">附錄：名詞定義（便於溝通）</h2>
+        <p class="body-m text-[#6B7280] mb-8">建議在 Term Sheet/PPM 中保留一致用語</p>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-[#F9F9F9] p-6 rounded-lg">
+            <h3 class="headline-h5 mb-3 text-[#FBB931]">• Preferred Shares（優先股）</h3>
+            <p class="body-s text-[#6B7280]">在分配上享有優先權（例如 Preferred Return、清算優先分配等）</p>
+          </div>
+          
+          <div class="bg-[#F9F9F9] p-6 rounded-lg">
+            <h3 class="headline-h5 mb-3 text-[#FBB931]">• Preferred Return / Hurdle（優先報酬/門檻）</h3>
+            <p class="body-s text-[#6B7280]">在普通股分配前，優先股先取得的累積回報（不等同於法律上的「利息」）</p>
+          </div>
+          
+          <div class="bg-[#F9F9F9] p-6 rounded-lg">
+            <h3 class="headline-h5 mb-3 text-[#FBB931]">• Carry / Performance Fee（績效費）</h3>
+            <p class="body-s text-[#6B7280]">依約定比例分取超額利潤（本模型：稅後利潤的 20%）</p>
+          </div>
+          
+          <div class="bg-[#F9F9F9] p-6 rounded-lg">
+            <h3 class="headline-h5 mb-3 text-[#FBB931]">• Cycle（週期）</h3>
+            <p class="body-s text-[#6B7280]">從收購→翻修→出售→回收現金的完整運作循環（6/9/12 個月情境）</p>
+          </div>
+          
+          <div class="bg-[#F9F9F9] p-6 rounded-lg">
+            <h3 class="headline-h5 mb-3 text-[#FBB931]">• WHT（預扣稅）</h3>
+            <p class="body-s text-[#6B7280]">跨境支付利息/股利時，支付地（日本）可能就源扣繳稅款</p>
+          </div>
+          
+          <div class="bg-[#F9F9F9] p-6 rounded-lg">
+            <h3 class="headline-h5 mb-3 text-[#FBB931]">• Transfer Pricing（移轉訂價）</h3>
+            <p class="body-s text-[#6B7280]">關聯方服務費/利息需符合合理定價與文件要求</p>
+          </div>
+        </div>
+        
+        <div class="bg-[#F9F9F9] p-6 rounded-lg mt-8 border-l-4 border-[#6B7280]">
+          <p class="body-m text-[#6B7280]">本文件為概念性說明，僅供投資人溝通；最終條款、稅務處理與合規安排以正式文件及顧問意見為準。</p>
+        </div>
+        
+        <!-- Page Number Footer -->
+        <div class="page-number-footer">
+          <p class="body-xs text-[#40444C]">13</p>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         SLIDE 14: CONTACT
+         ======================================== -->
+    <section class="slide bg-white" aria-label="第 14 頁：聯絡資訊" role="region" style="padding: 0 !important;">
+      <div class="w-full h-full flex flex-col relative">
+        <!-- Header: Logo and Date -->
+        <div class="slide-header">
+          <img src="Logos/TextLogo.png" alt="MoreHarvest" class="h-6 md:h-8 relative z-10" />
+          <span class="body-s text-[#40444C]">2026</span>
+        </div>
+        <div class="slide-header-line"></div>
+        
+        <!-- Logo centered below header -->
+        <div class="flex justify-center items-center pt-12 md:pt-16 pb-8">
+          <img src="Logos/TextLogo.png" alt="MoreHarvest" class="h-12 md:h-16" />
+        </div>
+        
+        <!-- Contact Information Bottom Left -->
+        <div class="absolute bottom-8 md:bottom-12 left-8 md:left-16">
+          <div class="flex flex-col space-y-2">
+            <p class="headline-h4 text-[#40444C] font-semibold">MoreHarvest</p>
+            <p class="body-m text-[#40444C]">0800 666 186</p>
+            <p class="body-m text-[#40444C]">
+              <a href="mailto:Hello@moreharvest.com" class="text-blue-600 underline">Hello@moreharvest.com</a>
+            </p>
+            <p class="body-s text-[#40444C] mt-2">台灣台北市信義區基隆路二段189號12樓之5，郵遞區號110</p>
+          </div>
+        </div>
+        
+        <!-- Website Bottom Right -->
+        <div class="absolute bottom-8 md:bottom-12 right-8 md:right-16">
+          <p class="body-m text-[#40444C]">
+            <a href="https://www.moreharvest.com" class="text-blue-600 underline">www.moreharvest.com</a>
+          </p>
+        </div>
+        
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+    // ========================================
+    // STATE MANAGEMENT
+    // ========================================
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+    const container = document.querySelector('.flipbook-container');
+
+    // Set total page count
+    document.getElementById('totalPages').textContent = totalSlides;
+
+    // ========================================
+    // HORIZONTAL WHEEL SCROLL
+    // ========================================
+    container.addEventListener('wheel', (e) => {
+      // #region agent log - Check if scrolling within a scrollable slide
+      const target = e.target;
+      const scrollableSlide = target.closest('.slide.scrollable');
+      
+      if (scrollableSlide) {
+        const slideScrollTop = scrollableSlide.scrollTop;
+        const slideScrollHeight = scrollableSlide.scrollHeight;
+        const slideClientHeight = scrollableSlide.clientHeight;
+        const maxScrollTop = Math.max(0, slideScrollHeight - slideClientHeight);
+        const isAtTop = slideScrollTop <= 10; // 10px threshold for top
+        const isAtBottom = slideScrollTop >= maxScrollTop - 10; // 10px threshold for bottom
+        const scrollingDown = e.deltaY > 0;
+        const scrollingUp = e.deltaY < 0;
+        const hasVerticalScroll = slideScrollHeight > slideClientHeight;
+        
+        fetch('http://127.0.0.1:7246/ingest/02e353fc-eb2c-4c1e-a983-3e2b3916d997',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'index.html:wheel',message:'Wheel event in scrollable slide',data:{slide:scrollableSlide.getAttribute('aria-label'),scrollTop:slideScrollTop,scrollHeight:slideScrollHeight,clientHeight:slideClientHeight,maxScrollTop:maxScrollTop,deltaY:e.deltaY,isAtTop:isAtTop,isAtBottom:isAtBottom,hasVerticalScroll:hasVerticalScroll,scrollingDown:scrollingDown,scrollingUp:scrollingUp},timestamp:Date.now(),sessionId:'debug-session',runId:'run4',hypothesisId:'E'})}).catch(()=>{});
+        
+        // Always allow vertical scrolling within scrollable slides if content exceeds viewport
+        if (hasVerticalScroll) {
+          // Only convert to horizontal if we're at boundary AND trying to scroll past it
+          // Use a larger threshold (10px) to allow more vertical scrolling before converting
+          if ((scrollingDown && isAtBottom) || (scrollingUp && isAtTop)) {
+            // At boundary - allow horizontal scroll to next/prev slide
+            fetch('http://127.0.0.1:7246/ingest/02e353fc-eb2c-4c1e-a983-3e2b3916d997',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'index.html:wheel',message:'At boundary, converting to horizontal',data:{action:'boundary_horizontal'},timestamp:Date.now(),sessionId:'debug-session',runId:'run4',hypothesisId:'E'})}).catch(()=>{});
+            e.preventDefault();
+            const delta = e.deltaY || e.deltaX;
+            container.scrollLeft += delta;
+            return;
+          } else {
+            // Not at boundary - allow vertical scroll within slide
+            fetch('http://127.0.0.1:7246/ingest/02e353fc-eb2c-4c1e-a983-3e2b3916d997',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'index.html:wheel',message:'Allowing vertical scroll',data:{action:'allowing_vertical_scroll'},timestamp:Date.now(),sessionId:'debug-session',runId:'run4',hypothesisId:'E'})}).catch(()=>{});
+            // Don't prevent default - let the slide scroll vertically
+            return;
+          }
+        }
+      }
+      // #endregion
+      
+      // For non-scrollable slides or when not in scrollable slide, convert to horizontal
+      fetch('http://127.0.0.1:7246/ingest/02e353fc-eb2c-4c1e-a983-3e2b3916d997',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'index.html:wheel',message:'Converting to horizontal scroll',data:{deltaY:e.deltaY,deltaX:e.deltaX},timestamp:Date.now(),sessionId:'debug-session',runId:'run4',hypothesisId:'E'})}).catch(()=>{});
+      e.preventDefault();
+      const delta = e.deltaY || e.deltaX;
+      container.scrollLeft += delta;
+    }, { passive: false });
+
+    // ========================================
+    // KEYBOARD NAVIGATION
+    // ========================================
+    document.addEventListener('keydown', (e) => {
+      // Right arrow or Space = next slide
+      if (e.key === 'ArrowRight' || e.key === ' ') {
+        e.preventDefault();
+        nextSlide();
+      }
+      
+      // Left arrow = previous slide
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        prevSlide();
+      }
+      
+      // Number keys 1-9 = jump to slide
+      if (e.key >= '1' && e.key <= '9') {
+        const index = parseInt(e.key) - 1;
+        if (index < totalSlides) {
+          e.preventDefault();
+          goToSlide(index);
+        }
+      }
+      
+      // Home key = first slide
+      if (e.key === 'Home') {
+        e.preventDefault();
+        goToSlide(0);
+      }
+      
+      // End key = last slide
+      if (e.key === 'End') {
+        e.preventDefault();
+        goToSlide(totalSlides - 1);
+      }
+    });
+
+    // ========================================
+    // NAVIGATION FUNCTIONS
+    // ========================================
+    function nextSlide() {
+      if (currentSlide < totalSlides - 1) {
+        goToSlide(currentSlide + 1);
+      } else {
+        // Loop to first page
+        goToSlide(0);
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 0) {
+        goToSlide(currentSlide - 1);
+      } else {
+        // Loop to last page
+        goToSlide(totalSlides - 1);
+      }
+    }
+
+    function goToSlide(index) {
+      currentSlide = index;
+      
+      // Scroll to slide (horizontal)
+      container.scrollTo({
+        left: index * window.innerWidth,
+        behavior: 'smooth'
+      });
+      
+      // Update UI
+      updateProgress();
+      
+      // Announce slide change to screen readers
+      const ariaLiveRegion = document.getElementById('aria-live-region');
+      const slide = slides[index];
+      const slideLabel = slide.getAttribute('aria-label') || `第 ${index + 1} 頁`;
+      if (ariaLiveRegion) {
+        ariaLiveRegion.textContent = `已切換至 ${slideLabel}`;
+      }
+      
+      // Focus management - focus the slide for screen readers
+      slide.setAttribute('tabindex', '-1');
+      slide.focus();
+    }
+
+    // ========================================
+    // SCROLL DETECTION
+    // ========================================
+    container.addEventListener('scroll', () => {
+      const scrollPosition = container.scrollLeft;
+      const slideWidth = window.innerWidth;
+      const newSlide = Math.round(scrollPosition / slideWidth);
+      
+      // Update current slide if changed
+      if (newSlide !== currentSlide && newSlide >= 0 && newSlide < totalSlides) {
+        currentSlide = newSlide;
+        updateProgress();
+        
+        // Announce slide change to screen readers
+        const ariaLiveRegion = document.getElementById('aria-live-region');
+        const slide = slides[newSlide];
+        const slideLabel = slide.getAttribute('aria-label') || `第 ${newSlide + 1} 頁`;
+        if (ariaLiveRegion) {
+          ariaLiveRegion.textContent = `已切換至 ${slideLabel}`;
+        }
+      }
+    });
+
+    // ========================================
+    // UPDATE PROGRESS INDICATORS
+    // ========================================
+    function updateProgress() {
+      // Update progress bar (top)
+      const percentage = ((currentSlide + 1) / totalSlides) * 100;
+      const progressFill = document.getElementById('progressFill');
+      if (progressFill) {
+        progressFill.style.width = percentage + '%';
+      }
+      
+      // Update page counter (top-left)
+      const currentPageEl = document.getElementById('currentPage');
+      if (currentPageEl) {
+        currentPageEl.textContent = currentSlide + 1;
+      }
+      
+      // Update progress bar ARIA
+      const progressBar = progressFill?.parentElement;
+      if (progressBar) {
+        progressBar.setAttribute('aria-valuenow', currentSlide + 1);
+        progressBar.setAttribute('aria-valuetext', `第 ${currentSlide + 1} 頁，共 ${totalSlides} 頁`);
+      }
+      
+      // Update page counter ARIA
+      if (currentPageEl) {
+        currentPageEl.setAttribute('aria-label', `第 ${currentSlide + 1} 頁`);
+      }
+      
+      // Update navigation dots (bottom)
+      const dots = document.querySelectorAll('.dot');
+      dots.forEach((dot, index) => {
+        if (index === currentSlide) {
+          // Active dot: brand color, wider
+          dot.classList.remove('bg-[#D8DBDF]', 'w-2');
+          dot.classList.add('bg-[#FBB931]', 'w-8');
+          dot.setAttribute('aria-pressed', 'true');
+          dot.setAttribute('tabindex', '0');
+        } else {
+          // Inactive dot: gray, narrow
+          dot.classList.remove('bg-[#FBB931]', 'w-8');
+          dot.classList.add('bg-[#D8DBDF]', 'w-2');
+          dot.setAttribute('aria-pressed', 'false');
+          dot.setAttribute('tabindex', '-1');
+        }
+      });
+      
+      // Update side arrow buttons (disable if at start/end)
+      const prevArrow = document.getElementById('prevArrow');
+      const nextArrow = document.getElementById('nextArrow');
+      
+      if (prevArrow) {
+        // Never disable - allow looping
+        prevArrow.disabled = false;
+        prevArrow.setAttribute('aria-disabled', 'false');
+        prevArrow.style.opacity = '1';
+        prevArrow.style.cursor = 'pointer';
+        prevArrow.setAttribute('aria-label', currentSlide === 0 ? '前往最後一頁' : '上一頁');
+      }
+      
+      if (nextArrow) {
+        // Never disable - allow looping
+        nextArrow.disabled = false;
+        nextArrow.setAttribute('aria-disabled', 'false');
+        nextArrow.style.opacity = '1';
+        nextArrow.style.cursor = 'pointer';
+        nextArrow.setAttribute('aria-label', currentSlide === totalSlides - 1 ? '前往第一頁' : '下一頁');
+      }
+      
+      // Update slide tabindex for keyboard navigation
+      slides.forEach((slide, index) => {
+        if (index === currentSlide) {
+          slide.setAttribute('tabindex', '0');
+        } else {
+          slide.setAttribute('tabindex', '-1');
+        }
+      });
+    }
+
+    // ========================================
+    // BUTTON EVENT LISTENERS
+    // ========================================
+    document.getElementById('prevArrow')?.addEventListener('click', prevSlide);
+    document.getElementById('nextArrow')?.addEventListener('click', nextSlide);
+
+    // Navigation dots click handlers and keyboard support
+    document.querySelectorAll('.dot').forEach(dot => {
+      dot.addEventListener('click', () => {
+        const slideIndex = parseInt(dot.getAttribute('data-slide'));
+        goToSlide(slideIndex);
+      });
+      
+      // Keyboard support for dots (Enter/Space)
+      dot.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          const slideIndex = parseInt(dot.getAttribute('data-slide'));
+          goToSlide(slideIndex);
+        }
+      });
+    });
+
+    // ========================================
+    // INITIALIZE ON PAGE LOAD
+    // ========================================
+    document.addEventListener('DOMContentLoaded', () => {
+      updateProgress(); // Set initial state
+      
+      // #region agent log - Check scrolling capability for slides 4 and 7
+      try {
+        const container = document.querySelector('.flipbook-container');
+        const slide5 = document.querySelector('[aria-label="第 5 頁：核心條款"]');
+        const slide8 = document.querySelector('[aria-label="第 8 頁：每 cycle 專案損益"]');
+        
+        // Check container
+        if (container) {
+          const containerStyle = window.getComputedStyle(container);
+          fetch('http://127.0.0.1:7246/ingest/02e353fc-eb2c-4c1e-a983-3e2b3916d997',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'index.html:DOMContentLoaded',message:'Container overflow check',data:{overflowX:containerStyle.overflowX,overflowY:containerStyle.overflowY,height:containerStyle.height,scrollHeight:container.scrollHeight,clientHeight:container.clientHeight},timestamp:Date.now(),sessionId:'debug-session',runId:'run2',hypothesisId:'C'})}).catch(()=>{});
+        }
+        
+        [slide5, slide8].forEach((slide, index) => {
+          if (slide) {
+            const slideNum = index === 0 ? 5 : 8;
+            const computedStyle = window.getComputedStyle(slide);
+            const parentStyle = slide.parentElement ? window.getComputedStyle(slide.parentElement) : null;
+            const overflowY = computedStyle.overflowY;
+            const height = computedStyle.height;
+            const maxHeight = computedStyle.maxHeight;
+            const minHeight = computedStyle.minHeight;
+            const scrollHeight = slide.scrollHeight;
+            const clientHeight = slide.clientHeight;
+            const offsetHeight = slide.offsetHeight;
+            const canScroll = scrollHeight > clientHeight;
+            const contentWrapper = slide.querySelector('.content-wrapper');
+            const wrapperHeight = contentWrapper ? contentWrapper.scrollHeight : 0;
+            
+            fetch('http://127.0.0.1:7246/ingest/02e353fc-eb2c-4c1e-a983-3e2b3916d997',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'index.html:DOMContentLoaded',message:`Slide ${slideNum} scrolling check`,data:{slide:slideNum,overflowY:overflowY,height:height,maxHeight:maxHeight,minHeight:minHeight,scrollHeight:scrollHeight,clientHeight:clientHeight,offsetHeight:offsetHeight,canScroll:canScroll,hasScrollableClass:slide.classList.contains('scrollable'),parentOverflowY:parentStyle?.overflowY,wrapperHeight:wrapperHeight},timestamp:Date.now(),sessionId:'debug-session',runId:'run2',hypothesisId:'B'})}).catch(()=>{});
+          }
+        });
+      } catch(e) {
+        fetch('http://127.0.0.1:7246/ingest/02e353fc-eb2c-4c1e-a983-3e2b3916d997',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'index.html:DOMContentLoaded',message:'Error checking scrolling',data:{error:e.message,stack:e.stack},timestamp:Date.now(),sessionId:'debug-session',runId:'run2',hypothesisId:'B'})}).catch(()=>{});
+      }
+      // #endregion
+    });
+
+    // Handle window resize (recalculate slide positions)
+    window.addEventListener('resize', () => {
+      // Re-snap to current slide after resize
+      container.scrollTo({
+        left: currentSlide * window.innerWidth,
+        behavior: 'auto' // No smooth scroll on resize
+      });
+    });
+
+    // #region agent log - Measure gap between header line and content on all slides
+    function measureGapOnAllSlides() {
+      const slides = document.querySelectorAll('.slide');
+      const measurements = [];
+      
+      fetch('http://127.0.0.1:7246/ingest/02e353fc-eb2c-4c1e-a983-3e2b3916d997', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          location: 'index.html:measureGapOnAllSlides',
+          message: 'Starting gap measurement',
+          data: { totalSlides: slides.length },
+          timestamp: Date.now(),
+          sessionId: 'debug-session',
+          runId: 'gap-measurement',
+          hypothesisId: 'A'
+        })
+      }).catch(() => {});
+      
+      slides.forEach((slide, index) => {
+        // Try multiple selectors for header line
+        let headerLine = slide.querySelector('.slide-header-line');
+        if (!headerLine) {
+          // Try finding border-t elements
+          const borderElements = slide.querySelectorAll('[class*="border-t"]');
+          borderElements.forEach(el => {
+            const classes = el.className;
+            if (classes.includes('border-t') && (classes.includes('EDEEF1') || classes.includes('#EDEEF1'))) {
+              headerLine = el;
+            }
+          });
+        }
+        
+        // Try multiple selectors for content wrapper
+        let contentWrapper = slide.querySelector('.content-wrapper');
+        if (!contentWrapper) {
+          // Try finding flex-1 flex containers that come after header
+          const flexContainers = slide.querySelectorAll('.flex-1');
+          flexContainers.forEach(el => {
+            if (el.classList.contains('flex') || el.classList.contains('content-wrapper')) {
+              contentWrapper = el;
+            }
+          });
+        }
+        
+        console.log(`Slide ${index + 1}: headerLine=${!!headerLine}, contentWrapper=${!!contentWrapper}`);
+        
+        // Log if elements are missing
+        if (!headerLine || !contentWrapper) {
+          fetch('http://127.0.0.1:7246/ingest/02e353fc-eb2c-4c1e-a983-3e2b3916d997', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              location: 'index.html:measureGapOnAllSlides',
+              message: `Slide ${index + 1} missing elements`,
+              data: {
+                slideIndex: index + 1,
+                hasHeaderLine: !!headerLine,
+                hasContentWrapper: !!contentWrapper,
+                slideHTML: slide.outerHTML.substring(0, 200)
+              },
+              timestamp: Date.now(),
+              sessionId: 'debug-session',
+              runId: 'gap-measurement',
+              hypothesisId: 'A'
+            })
+          }).catch(() => {});
+        }
+        
+        if (headerLine && contentWrapper) {
+          const lineRect = headerLine.getBoundingClientRect();
+          const contentRect = contentWrapper.getBoundingClientRect();
+          const computedGap = contentRect.top - lineRect.bottom;
+          
+          const lineStyles = window.getComputedStyle(headerLine);
+          const contentStyles = window.getComputedStyle(contentWrapper);
+          
+          const lineMarginBottomPx = parseFloat(lineStyles.marginBottom) || 0;
+          const contentPaddingTopPx = parseFloat(contentStyles.paddingTop) || 0;
+          
+          console.log(`Slide ${index + 1} gap: ${computedGap}px (expected: 32px, lineMarginBottom: ${lineMarginBottomPx}px, contentPaddingTop: ${contentPaddingTopPx}px)`);
+          
+          measurements.push({
+            slideIndex: index + 1,
+            computedGap: computedGap,
+            lineMarginBottom: lineStyles.marginBottom,
+            lineMarginBottomPx: lineMarginBottomPx,
+            contentPaddingTop: contentStyles.paddingTop,
+            contentPaddingTopPx: contentPaddingTopPx,
+            lineBottom: lineRect.bottom,
+            contentTop: contentRect.top
+          });
+          
+          fetch('http://127.0.0.1:7246/ingest/02e353fc-eb2c-4c1e-a983-3e2b3916d997', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              location: 'index.html:measureGapOnAllSlides',
+              message: `Slide ${index + 1} gap measurement`,
+              data: {
+                slideIndex: index + 1,
+                computedGap: computedGap,
+                lineMarginBottom: lineStyles.marginBottom,
+                lineMarginBottomPx: lineMarginBottomPx,
+                contentPaddingTop: contentStyles.paddingTop,
+                contentPaddingTopPx: contentPaddingTopPx,
+                expectedGap: 32,
+                gapDifference: computedGap - 32,
+                isCorrect: Math.abs(computedGap - 32) < 1
+              },
+              timestamp: Date.now(),
+              sessionId: 'debug-session',
+              runId: 'gap-measurement',
+              hypothesisId: 'A'
+            })
+          }).catch(() => {});
+        } else {
+          fetch('http://127.0.0.1:7246/ingest/02e353fc-eb2c-4c1e-a983-3e2b3916d997', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              location: 'index.html:measureGapOnAllSlides',
+              message: `Slide ${index + 1} missing elements`,
+              data: {
+                slideIndex: index + 1,
+                hasHeaderLine: !!headerLine,
+                hasContentWrapper: !!contentWrapper
+              },
+              timestamp: Date.now(),
+              sessionId: 'debug-session',
+              runId: 'gap-measurement',
+              hypothesisId: 'A'
+            })
+          }).catch(() => {});
+        }
+      });
+      
+      fetch('http://127.0.0.1:7246/ingest/02e353fc-eb2c-4c1e-a983-3e2b3916d997', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          location: 'index.html:measureGapOnAllSlides',
+          message: 'All slides gap summary',
+          data: {
+            totalSlides: slides.length,
+            measuredSlides: measurements.length,
+            gaps: measurements.map(m => ({ slide: m.slideIndex, gap: m.computedGap, isCorrect: Math.abs(m.computedGap - 32) < 1 })),
+            allGapsAre32px: measurements.every(m => Math.abs(m.computedGap - 32) < 1),
+            incorrectGaps: measurements.filter(m => Math.abs(m.computedGap - 32) >= 1).map(m => ({ slide: m.slideIndex, gap: m.computedGap }))
+          },
+          timestamp: Date.now(),
+          sessionId: 'debug-session',
+          runId: 'gap-measurement',
+          hypothesisId: 'A'
+        })
+      }).catch(() => {});
+    }
+    
+    // Measure after page load and after any navigation
+    function initGapMeasurement() {
+      console.log('Initializing gap measurement, readyState:', document.readyState);
+      fetch('http://127.0.0.1:7246/ingest/02e353fc-eb2c-4c1e-a983-3e2b3916d997', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          location: 'index.html:initGapMeasurement',
+          message: 'Initializing gap measurement',
+          data: { readyState: document.readyState },
+          timestamp: Date.now(),
+          sessionId: 'debug-session',
+          runId: 'gap-measurement',
+          hypothesisId: 'A'
+        })
+      }).catch(() => {});
+      
+      setTimeout(() => {
+        try {
+          console.log('Calling measureGapOnAllSlides');
+          measureGapOnAllSlides();
+        } catch (e) {
+          console.error('Error calling measureGapOnAllSlides:', e);
+          fetch('http://127.0.0.1:7246/ingest/02e353fc-eb2c-4c1e-a983-3e2b3916d997', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              location: 'index.html:initGapMeasurement',
+              message: 'Error calling measureGapOnAllSlides',
+              data: { error: e.toString(), stack: e.stack },
+              timestamp: Date.now(),
+              sessionId: 'debug-session',
+              runId: 'gap-measurement',
+              hypothesisId: 'A'
+            })
+          }).catch(() => {});
+        }
+      }, 1000);
+    }
+    
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initGapMeasurement);
+    } else {
+      initGapMeasurement();
+    }
+    
+    // Also measure on window load
+    window.addEventListener('load', () => {
+      setTimeout(measureGapOnAllSlides, 500);
+    });
+    
+    // Immediate measurement on script execution
+    (function() {
+      setTimeout(() => {
+        console.log('=== GAP MEASUREMENT START ===');
+        document.querySelectorAll('.slide').forEach((slide, index) => {
+          const headerLine = slide.querySelector('.slide-header-line') || 
+                            slide.querySelector('[class*="border-t"][class*="EDEEF1"]');
+          const contentWrapper = slide.querySelector('.content-wrapper') || 
+                                slide.querySelector('.flex-1.flex');
+          
+          if (headerLine && contentWrapper) {
+            const gap = contentWrapper.getBoundingClientRect().top - headerLine.getBoundingClientRect().bottom;
+            const lineStyle = window.getComputedStyle(headerLine);
+            const contentStyle = window.getComputedStyle(contentWrapper);
+            console.log(`Slide ${index + 1}: gap=${gap}px, lineMarginBottom=${lineStyle.marginBottom}, contentPaddingTop=${contentStyle.paddingTop}`);
+            
+            // Log to server
+            fetch('http://127.0.0.1:7246/ingest/02e353fc-eb2c-4c1e-a983-3e2b3916d997', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                location: 'index.html:immediateGapMeasurement',
+                message: `Slide ${index + 1} gap`,
+                data: {
+                  slideIndex: index + 1,
+                  gap: gap,
+                  expectedGap: 32,
+                  difference: gap - 32,
+                  lineMarginBottom: lineStyle.marginBottom,
+                  contentPaddingTop: contentStyle.paddingTop
+                },
+                timestamp: Date.now(),
+                sessionId: 'debug-session',
+                runId: 'immediate-gap-measurement',
+                hypothesisId: 'A'
+              })
+            }).catch(() => {});
+          } else {
+            console.log(`Slide ${index + 1}: Missing elements - headerLine=${!!headerLine}, contentWrapper=${!!contentWrapper}`);
+          }
+        });
+        console.log('=== GAP MEASUREMENT END ===');
+      }, 2000);
+    })();
+    
+    // Also measure after slide navigation
+    const originalGoToSlide = goToSlide;
+    goToSlide = function(index) {
+      originalGoToSlide(index);
+      setTimeout(measureGapOnAllSlides, 200);
+    };
+    // #endregion
+  </script>
+
+</body>
+</html>
+
