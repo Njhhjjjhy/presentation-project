@@ -1,5 +1,5 @@
-cd "/Users/riaan/Documents/Design Files/Cursor/Presentation test"
-ç<!DOCTYPE html>
+
+<!DOCTYPE html>
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
@@ -9,10 +9,13 @@ cd "/Users/riaan/Documents/Design Files/Cursor/Presentation test"
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   
-  <!-- Google Fonts - Inter -->
+  <!-- Google Fonts - Inter + REM (500.co-inspired) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=REM:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Design Tokens CSS Variables -->
+  <link rel="stylesheet" href="tokens.css">
   
   <style>
     /* ========================================
@@ -22,14 +25,37 @@ cd "/Users/riaan/Documents/Design Files/Cursor/Presentation test"
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    
+    html {
+      text-rendering: geometricPrecision;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
     
     body {
-      background: #F9F9F9;
+      background: linear-gradient(180deg, #FEFEFE 0%, #F9F9F9 100%);
       overflow: hidden;
       width: 100vw;
       height: 100vh;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--text, #1E1F20);
+    }
+    
+    /* 500.co: Subtle gradient backgrounds on slides */
+    .slide.bg-white {
+      background: linear-gradient(180deg, #FEFEFE 0%, #F9F9F9 100%) !important;
+    }
+    
+    a {
+      color: var(--link, #1282C0);
+      text-decoration: none;
+      transition: color 200ms ease;
+    }
+    
+    a:hover {
+      text-decoration: underline;
+      text-underline-offset: 4px;
     }
     
     /* ========================================
@@ -97,99 +123,123 @@ cd "/Users/riaan/Documents/Design Files/Cursor/Presentation test"
     }
     
     /* ========================================
-       TYPOGRAPHY CLASSES
+       TYPOGRAPHY CLASSES - 500.co visual match
        ======================================== */
-    .headline-h1 {
-      font-size: clamp(2.4rem, 4vw, 2.5rem);
-      line-height: 1.25;
-      letter-spacing: 0.0025em;
-      font-weight: 600;
-      color: #1E1F20;
-      margin: 0;
+    /* Display Hero - 500.co visual match: Not too bold, generous spacing */
+    .headline-h1,
+    h1.headline-h1 {
+      font-family: 'REM', system-ui, -apple-system, sans-serif !important;
+      font-size: clamp(3rem, 5vw, 4.5rem) !important; /* 500.co: 48px-72px */
+      line-height: 1.2 !important; /* 500.co: more generous, not tight */
+      letter-spacing: -0.02em !important;
+      font-weight: 600 !important; /* 500.co: not bold, semibold */
+      color: #1E1F20 !important;
+      margin: 0 !important;
+      text-rendering: geometricPrecision !important;
     }
     
-    .headline-h2 {
-      font-size: clamp(2.1rem, 3.5vw, 2.2rem);
-      line-height: 1.25;
-      letter-spacing: 0.0025em;
-      font-weight: 600;
-      color: #1E1F20;
-      margin: 0;
+    .headline-h2,
+    h2.headline-h2 {
+      font-family: 'REM', system-ui, -apple-system, sans-serif !important;
+      font-size: clamp(2rem, 4vw, 3rem) !important; /* 500.co: 32px-48px */
+      line-height: 1.3 !important; /* More generous */
+      letter-spacing: -0.015em !important;
+      font-weight: 600 !important; /* Semibold, not bold */
+      color: #1E1F20 !important;
+      margin: 0 !important;
+      text-rendering: geometricPrecision !important;
     }
     
-    .headline-h3 {
-      font-size: clamp(1.7rem, 3vw, 1.8rem);
-      line-height: 1.25;
-      letter-spacing: 0.0025em;
-      font-weight: 600;
-      color: #1E1F20;
-      margin: 0;
+    .headline-h3,
+    h3.headline-h3 {
+      font-family: 'REM', system-ui, -apple-system, sans-serif !important;
+      font-size: clamp(1.5rem, 3vw, 2rem) !important; /* 500.co: 24px-32px */
+      line-height: 1.35 !important; /* More generous */
+      letter-spacing: -0.01em !important;
+      font-weight: 500 !important; /* Medium weight, not semibold */
+      color: #1E1F20 !important;
+      margin: 0 !important;
+      text-rendering: geometricPrecision !important;
     }
     
     .headline-h4 {
-      font-size: clamp(1.45rem, 2.5vw, 1.5rem);
-      line-height: 1.25;
-      letter-spacing: 0.0025em;
+      font-family: 'REM', system-ui, -apple-system, sans-serif;
+      font-size: clamp(1.25rem, 2.5vw, 1.75rem); /* 500.co: smaller scale */
+      line-height: 1.3;
+      letter-spacing: -0.01em;
       font-weight: 600;
       color: #1E1F20;
       margin: 0;
+      text-rendering: geometricPrecision;
     }
     
     .headline-h5 {
-      font-size: clamp(1.2rem, 2vw, 1.25rem);
-      line-height: 1.25;
-      letter-spacing: 0.0025em;
+      font-family: 'REM', system-ui, -apple-system, sans-serif;
+      font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+      line-height: 1.35;
+      letter-spacing: -0.005em;
       font-weight: 600;
       color: #1E1F20;
       margin: 0;
+      text-rendering: geometricPrecision;
     }
     
-    .body-l {
-      font-size: clamp(1.15rem, 1.5vw, 1.2rem);
-      line-height: 1.5;
-      letter-spacing: 0.0025em;
-      color: #40444C;
-      margin: 0;
+    .body-l,
+    p.body-l,
+    span.body-l {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+      font-size: clamp(1rem, 1.2vw, 1.125rem) !important; /* 500.co: 16px-18px */
+      line-height: 1.7 !important; /* 500.co: more generous line-height */
+      letter-spacing: -0.005em !important;
+      color: #40444C !important;
+      margin: 0 !important;
     }
     
-    .body-m {
-      font-size: clamp(1rem, 1vw, 1rem);
-      line-height: 1.5;
-      letter-spacing: 0.0025em;
-      color: #40444C;
-      margin: 0;
+    .body-m,
+    p.body-m,
+    span.body-m {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+      font-size: clamp(1rem, 1.2vw, 1.125rem) !important; /* 500.co: 16px-18px */
+      line-height: 1.7 !important; /* 500.co: more generous, comfortable reading */
+      letter-spacing: 0 !important;
+      color: #40444C !important;
+      margin: 0 !important;
     }
     
     .body-s {
-      font-size: clamp(0.83rem, 0.8vw, 0.85rem);
-      line-height: 1.5;
-      letter-spacing: 0.0025em;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-size: clamp(0.875rem, 1vw, 0.9375rem);
+      line-height: 1.6;
+      letter-spacing: 0;
       color: #40444C;
       margin: 0;
     }
     
     .body-xs {
-      font-size: clamp(0.75rem, 0.7vw, 0.75rem);
-      line-height: 1.5;
-      letter-spacing: 0.0025em;
-      color: #40444C; /* Changed from #6B7280 for AAA contrast (7:1 on #F9F9F9) */
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-size: clamp(0.8125rem, 0.9vw, 0.875rem);
+      line-height: 1.6;
+      letter-spacing: 0;
+      color: #40444C;
       margin: 0;
     }
     
     .label-l {
+      font-family: 'REM', system-ui, -apple-system, sans-serif;
       font-size: 16px;
-      line-height: 1.25;
-      letter-spacing: 0.0025em;
-      font-weight: 400;
+      line-height: 1.5;
+      letter-spacing: 0;
+      font-weight: 500;
       color: #40444C;
       margin: 0;
     }
     
     .label-m {
+      font-family: 'REM', system-ui, -apple-system, sans-serif;
       font-size: 14px;
-      line-height: 1.25;
-      letter-spacing: 0.0025em;
-      font-weight: 400;
+      line-height: 1.5;
+      letter-spacing: 0;
+      font-weight: 500;
       color: #40444C;
       margin: 0;
     }
@@ -240,17 +290,8 @@ cd "/Users/riaan/Documents/Design Files/Cursor/Presentation test"
       overflow-x: hidden;
     }
     
-    @media (min-width: 768px) {
-      .slide {
-        padding: 4rem 3rem;
-      }
-    }
-    
-    @media (min-width: 1024px) {
-      .slide {
-        padding: 5rem 4rem;
-      }
-    }
+    /* 500.co: Slides don't need padding - content has padding instead */
+    /* Keep padding: 0 !important on slides - padding is on content-wrapper */
     
     /* ========================================
        TRANSITIONS & ANIMATIONS
@@ -263,21 +304,34 @@ cd "/Users/riaan/Documents/Design Files/Cursor/Presentation test"
       transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
     }
     
-    /* Ensure navigation arrows never block the header */
+    /* PROTECT NAVIGATION: Ensure navigation elements are not affected by typography or layout changes */
+    /* Only reset typography, don't override positioning - let Tailwind handle that */
     #prevArrow,
-    #nextArrow {
-      /* Position arrows vertically centered, but ensure they're below header area */
-      top: 50%;
-      transform: translateY(-50%);
+    #nextArrow,
+    nav button,
+    nav .dot {
+      /* Reset any typography overrides that might interfere */
+      font-family: inherit !important;
+      font-size: inherit !important;
+      font-weight: inherit !important;
+      line-height: inherit !important;
+      letter-spacing: inherit !important;
+      color: inherit !important;
+      margin: 0 !important;
     }
     
-    /* On smaller screens or when header is tall, ensure arrows don't overlap */
-    @media (max-height: 600px) {
-      #prevArrow,
-      #nextArrow {
-        top: calc(50% + 40px);
-      }
+    /* Protect page counter text from body-s overrides */
+    [role="status"] .body-s,
+    [role="status"] span {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+      font-size: 0.875rem !important;
+      line-height: 1.5 !important;
+      font-weight: 500 !important;
     }
+    
+    /* REMOVED: Let Tailwind handle all navigation positioning */
+    /* Navigation elements use Tailwind classes (fixed, left-4, right-4, etc.) */
+    /* Don't override with CSS - let Tailwind work */
     
     /* ========================================
        UTILITY CLASSES
@@ -286,6 +340,56 @@ cd "/Users/riaan/Documents/Design Files/Cursor/Presentation test"
     /* CSS variable for consistent gap */
     :root {
       --header-content-gap: 32px;
+    }
+    
+    /* 500.co Gradients - Brand colors */
+    .gradient-brand {
+      background: linear-gradient(135deg, #FBB931 0%, #FF9424 100%);
+    }
+    
+    .gradient-amber {
+      background: linear-gradient(135deg, #FEF3C7 0%, #FBB931 100%);
+    }
+    
+    .gradient-orange {
+      background: linear-gradient(135deg, #FFEDD5 0%, #FF9424 100%);
+    }
+    
+    .gradient-subtle {
+      background: linear-gradient(180deg, #FEFEFE 0%, #F9F9F9 100%);
+    }
+    
+    /* Text gradients */
+    .text-gradient-brand {
+      background: linear-gradient(135deg, #FBB931 0%, #FF9424 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    /* Color variety - use more colors from palette */
+    .text-amber {
+      color: #FBB931;
+    }
+    
+    .text-orange {
+      color: #FF9424;
+    }
+    
+    .text-green {
+      color: #19B64E;
+    }
+    
+    .bg-amber-light {
+      background-color: #FFFBEB;
+    }
+    
+    .bg-orange-light {
+      background-color: #FFF7ED;
+    }
+    
+    .bg-green-light {
+      background-color: #F0FDF4;
     }
     
     /* CRITICAL: Ensure 32px gap on ALL slides - highest priority rules */
@@ -349,25 +453,42 @@ cd "/Users/riaan/Documents/Design Files/Cursor/Presentation test"
       padding-top: 0 !important;
     }
     
-    /* Consistent header for all slides */
+    /* Consistent header for all slides - 500.co EXACT match */
     .slide-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1.5rem 2rem;
-      padding-top: 1.5rem;
-      padding-bottom: 1rem;
-      padding-left: calc(2rem + 120px);
-      padding-right: 2rem;
+      padding: 2.5rem 1rem;
+      padding-top: 3rem;
+      padding-bottom: 1.5rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
     }
     
     @media (min-width: 768px) {
       .slide-header {
-        padding: 2rem 4rem;
-        padding-top: 2rem;
-        padding-bottom: 1rem;
-        padding-left: calc(4rem + 120px);
-        padding-right: 4rem;
+        padding: 3rem 3rem;
+        padding-top: 3.5rem;
+        padding-bottom: 2rem;
+        padding-left: 3rem;
+        padding-right: 3rem;
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .slide-header {
+        padding: 3rem 3rem !important;
+        padding-top: 4rem !important;
+        padding-bottom: 2rem !important;
+        padding-left: 3rem !important; /* 500.co: 48px = 3rem reasonable padding */
+        padding-right: 3rem !important;
+      }
+    }
+    
+    @media (min-width: 1440px) {
+      .slide-header {
+        padding-left: 5rem !important; /* 500.co: 80px = 5rem on large screens */
+        padding-right: 5rem !important;
       }
     }
     
@@ -430,33 +551,72 @@ cd "/Users/riaan/Documents/Design Files/Cursor/Presentation test"
       margin-top: 0px !important;
     }
     
-    /* Ensure content wrapper has no top padding to maintain 32px gap */
+    /* Ensure content wrapper has no top padding to maintain 32px gap - 500.co EXACT match */
     .content-wrapper {
-      max-width: 1280px;
+      max-width: 1280px; /* 500.co editorial width */
       margin: 0 auto;
       width: 100%;
-      padding-left: calc(2rem + 120px);
-      padding-right: 2rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
       padding-top: 0 !important; /* No top padding - gap comes from header line margin */
       padding-bottom: 0 !important; /* No bottom padding - page number is separate */
     }
     
-    /* Page number footer - separate component, does not overlay */
+    @media (min-width: 768px) {
+      .content-wrapper {
+        padding-left: 3rem; /* 48px */
+        padding-right: 3rem;
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .content-wrapper {
+        padding-left: 3rem !important; /* 500.co: 48px reasonable padding */
+        padding-right: 3rem !important;
+      }
+    }
+    
+    @media (min-width: 1440px) {
+      .content-wrapper {
+        padding-left: 5rem !important; /* 500.co: 80px on large screens */
+        padding-right: 5rem !important;
+      }
+    }
+    
+    /* Page number footer - separate component, does not overlay - 500.co EXACT match */
     .page-number-footer {
       width: 100%;
       display: flex;
       justify-content: flex-end;
-      padding-left: calc(2rem + 120px);
-      padding-right: 2rem;
-      padding-bottom: 1rem;
-      padding-top: 1rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      padding-bottom: 2rem;
+      padding-top: 1.5rem;
       flex-shrink: 0;
     }
     
     @media (min-width: 768px) {
       .page-number-footer {
-        padding-left: calc(4rem + 120px);
-        padding-right: 4rem;
+        padding-left: 3rem;
+        padding-right: 3rem;
+        padding-bottom: 3rem;
+        padding-top: 2rem;
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .page-number-footer {
+        padding-left: 3rem; /* 500.co: 48px */
+        padding-right: 3rem;
+        padding-bottom: 3rem;
+        padding-top: 2rem;
+      }
+    }
+    
+    @media (min-width: 1440px) {
+      .page-number-footer {
+        padding-left: 5rem; /* 500.co: 80px */
+        padding-right: 5rem;
       }
     }
     
@@ -552,12 +712,6 @@ cd "/Users/riaan/Documents/Design Files/Cursor/Presentation test"
       margin-bottom: 32px !important;
     }
     
-    @media (min-width: 768px) {
-      .content-wrapper {
-        padding-left: calc(4rem + 120px);
-        padding-right: 4rem;
-      }
-    }
     
     .content-narrow {
       max-width: 900px;
@@ -653,13 +807,162 @@ cd "/Users/riaan/Documents/Design Files/Cursor/Presentation test"
       outline: none !important;
     }
     
-    /* Only allow effects if explicitly added via class */
+    /* Only allow effects if explicitly added via class - 500.co subtle shadows */
     img.with-shadow {
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      box-shadow: var(--shadow-chevron, 0 1px 2px rgba(64, 68, 76, 0.25));
     }
     
     img.with-border {
+      border: 1px solid var(--neutral-100, #EDEEF1);
+    }
+    
+    /* ========================================
+       COMPONENT STYLING - 500.co visual match
+       ======================================== */
+    
+    /* Container - 500.co responsive grid padding */
+    .container-500 {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+    
+    @media (min-width: 768px) {
+      .container-500 {
+        padding-left: 48px;
+        padding-right: 48px;
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .container-500 {
+        padding-left: 48px;
+        padding-right: 48px;
+      }
+    }
+    
+    @media (min-width: 1440px) {
+      .container-500 {
+        padding-left: 80px;
+        padding-right: 80px;
+      }
+    }
+    
+    /* Section - 500.co reasonable vertical rhythm */
+    .section-500 {
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+    
+    @media (min-width: 1024px) {
+      .section-500 {
+        padding-top: 80px;
+        padding-bottom: 80px;
+      }
+    }
+    
+    /* Hero section - extra generous spacing */
+    .hero-500 {
+      padding-top: 120px;
+      padding-bottom: 80px;
+    }
+    
+    @media (min-width: 1024px) {
+      .hero-500 {
+        padding-top: 160px;
+        padding-bottom: 120px;
+      }
+    }
+    
+    /* Cards - minimal, clean, subtle shadows (500.co style) */
+    .card {
+      background: var(--bg, #FEFEFE);
+      border-radius: 8px;
+      box-shadow: 0 1px 2px rgba(64, 68, 76, 0.1); /* 500.co: very subtle */
+      transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .card:hover {
+      box-shadow: 0 4px 6px rgba(64, 68, 76, 0.1); /* 500.co: slightly more on hover */
+    }
+    
+    /* Buttons - 500.co style */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 24px;
+      font-family: 'REM', system-ui, sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 0;
+      color: #1E1F20;
+      background-color: #FBB931; /* brand.amber */
+      border: none;
+      border-radius: 6px;
+      transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+    }
+    
+    .btn-primary:hover {
+      filter: brightness(0.95);
+      transform: translateY(-1px);
+    }
+    
+    .btn-primary:focus-visible {
+      outline: 2px solid #FBB931;
+      outline-offset: 2px;
+    }
+    
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 24px;
+      font-family: 'REM', system-ui, sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 0;
+      color: #1E1F20;
+      background-color: transparent;
       border: 1px solid #EDEEF1;
+      border-radius: 6px;
+      transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+    }
+    
+    .btn-outline:hover {
+      background-color: rgba(251, 185, 49, 0.1);
+      border-color: #FBB931;
+    }
+    
+    .btn-outline:focus-visible {
+      outline: 2px solid #FBB931;
+      outline-offset: 2px;
+    }
+    
+    /* Hairline utility - 500.co style */
+    .hairline {
+      border-top: 1px solid #EDEEF1;
+      width: 100%;
+    }
+    
+    /* Editorial max width */
+    .editorial-width {
+      max-width: 72ch;
+    }
+    
+    /* Focus ring utility */
+    .focus-ring {
+      outline: none;
+    }
+    
+    .focus-ring:focus-visible {
+      outline: 2px solid #FBB931;
+      outline-offset: 2px;
+      border-radius: 2px;
     }
     
     /* ========================================
@@ -675,9 +978,7 @@ cd "/Users/riaan/Documents/Design Files/Cursor/Presentation test"
     }
     
     /* Horizontal scroll behavior identical at all sizes */
-    .flipbook-container {
-      /* No breakpoint-specific changes */
-    }
+    /* No breakpoint-specific changes needed for .flipbook-container */
     
     /* Vertical scrolling remains forbidden - except for slides that need it */
     body,
@@ -740,9 +1041,7 @@ cd "/Users/riaan/Documents/Design Files/Cursor/Presentation test"
        ======================================== */
     
     /* No lazy loading - all images load immediately */
-    img {
-      loading: eager;
-    }
+    /* Note: loading="eager" should be set as HTML attribute on img tags, not CSS */
     
     /* No optimization - preserve original quality */
     img {
@@ -762,14 +1061,12 @@ cd "/Users/riaan/Documents/Design Files/Cursor/Presentation test"
     /* Fix low contrast text - AAA compliant colors */
     /* Use multiple selector approaches to catch Tailwind arbitrary classes */
     [class*="text-[#6B7280]"],
-    .text-\\[\\#6B7280\\],
     *[style*="color: rgb(107, 114, 128)"],
     *[style*="color: #6B7280"] {
       color: #40444C !important; /* AAA compliant: 7.2:1 on #F9F9F9 */
     }
     
     [class*="text-[#B6BAC3]"],
-    .text-\\[\\#B6BAC3\\],
     *[style*="color: rgb(182, 186, 195)"],
     *[style*="color: #B6BAC3"] {
       color: #40444C !important; /* AAA compliant: 7.2:1 on #F9F9F9 */
@@ -891,8 +1188,8 @@ cd "/Users/riaan/Documents/Design Files/Cursor/Presentation test"
          ======================================== -->
     <section class="slide bg-white" aria-label="第 1 頁：標題頁" role="region" style="padding: 0 !important;">
       <div class="w-full h-full flex flex-col">
-        <!-- Header: Logo and Date at the very top -->
-        <div class="flex justify-between items-center px-8 md:px-16 pt-6 md:pt-8 pb-4" style="padding-left: calc(2rem + 120px);">
+        <!-- Header: Logo and Date at the very top - 500.co match -->
+        <div class="slide-header">
           <img src="Logos/TextLogo.png" alt="MoreHarvest" class="h-6 md:h-8 relative z-10" />
           <span class="body-s text-[#40444C]">2026</span>
         </div>
@@ -900,11 +1197,11 @@ cd "/Users/riaan/Documents/Design Files/Cursor/Presentation test"
         <!-- Horizontal Line -->
         <div class="border-t border-[#EDEEF1] w-full" style="margin-bottom: 32px !important;"></div>
         
-        <!-- Main Content: Text Left (40-45%), Image Right (55-60%) -->
-        <div class="flex-1 flex flex-col md:flex-row items-center justify-center pb-8 md:pb-12 gap-8 md:gap-12" style="padding-left: calc(2rem + 120px); padding-right: 2rem; padding-top: 0;">
+        <!-- Main Content: Text Left (40-45%), Image Right (55-60%) - 500.co match -->
+        <div class="flex-1 flex flex-col md:flex-row items-center justify-center pb-8 md:pb-12 gap-8 md:gap-12 content-wrapper" style="padding-top: 0;">
           <!-- Left: Text (40-45% width) -->
           <div class="w-full md:w-[45%] flex flex-col justify-center items-start">
-            <h1 class="headline-h1 text-left text-[#40444C]">
+            <h1 class="headline-h1 text-left text-[#1E1F20]">
               熊本「中古住宅翻修轉售」
             </h1>
           </div>
@@ -927,8 +1224,8 @@ cd "/Users/riaan/Documents/Design Files/Cursor/Presentation test"
          ======================================== -->
     <section class="slide scrollable bg-white" aria-label="第 2 頁：目錄" role="region" style="padding: 0 !important;">
       <div class="w-full h-full flex flex-col relative">
-        <!-- Header: Logo and Date at the very top -->
-        <div class="flex justify-between items-start px-8 md:px-16 pt-6 md:pt-8 pb-2" style="padding-left: calc(2rem + 120px);">
+        <!-- Header: Logo and Date at the very top - 500.co match -->
+        <div class="slide-header" style="align-items: flex-start;">
           <div class="relative z-10" style="display: grid; grid-template-columns: 1fr; gap: 0.5rem; width: fit-content;">
             <img src="Logos/TextLogo.png" alt="MoreHarvest" class="h-6 md:h-8" style="display: block; margin: 0; padding: 0; grid-column: 1; justify-self: start;" />
             <div class="headline-h5 text-[#40444C]" style="margin: 0; padding: 0; grid-column: 1; justify-self: start; text-align: left;">00 | 索引</div>
@@ -939,8 +1236,8 @@ cd "/Users/riaan/Documents/Design Files/Cursor/Presentation test"
         <!-- Horizontal Line -->
         <div class="border-t border-[#EDEEF1] w-full" style="margin-top: 1rem; margin-bottom: 32px !important;"></div>
         
-        <!-- Main Content: Index Left (40-45%), Image Right (55-60%) -->
-        <div class="flex-1 flex flex-col md:flex-row items-start justify-center pb-8 md:pb-12 gap-8 md:gap-12" style="padding-left: calc(2rem + 120px); padding-right: 2rem; padding-top: 0;">
+        <!-- Main Content: Index Left (40-45%), Image Right (55-60%) - 500.co match -->
+        <div class="flex-1 flex flex-col md:flex-row items-start justify-center pb-8 md:pb-12 gap-8 md:gap-12 content-wrapper" style="padding-top: 0;">
           <!-- Left: Index List (40-45% width) -->
           <div class="w-full md:w-[45%] flex flex-col justify-center">
             <div class="flex flex-col space-y-4">
@@ -1073,660 +1370,659 @@ cd "/Users/riaan/Documents/Design Files/Cursor/Presentation test"
             <div>
               <h3 class="headline-h4 mb-4 text-[#FBB931]">關鍵經濟條款（對外呈現）</h3>
               <ul class="space-y-3">
-                <li class="flex items-start">
-                  <span class="text-[#FBB931] mr-2">•</span>
-                  <p class="body-m">投資人：優先股（Preferred Shares），享 5% Preferred Return（Hurdle）</p>
-                </li>
-                <li class="flex items-start">
-                  <span class="text-[#FBB931] mr-2">•</span>
-                  <p class="body-m">管理人：普通股（Common Shares）+ 績效費 20%（稅後利潤基礎）</p>
-                </li>
-                <li class="flex items-start">
-                  <span class="text-[#FBB931] mr-2">•</span>
-                  <p class="body-m">管理費：0%</p>
-                </li>
-                <li class="flex items-start">
-                  <span class="text-[#FBB931] mr-2">•</span>
-                  <p class="body-m">稅務：日本 KK 依公司稅制（模型採 35%）</p>
-                </li>
-              </ul>
-            </div>
-            
-            <!-- Divider -->
-            <div class="border-t border-[#EDEEF1] pt-8">
-              <!-- 週期 -->
-              <div>
-                <h3 class="headline-h4 mb-4 text-[#FBB931]">週期（Cycle）</h3>
-                <ul class="space-y-3">
-                  <li class="flex items-start">
-                    <span class="text-[#FBB931] mr-2">•</span>
-                    <p class="body-m">Bear：12 個月/ cycle（1.0 次/年）</p>
-                  </li>
-                  <li class="flex items-start">
-                    <span class="text-[#FBB931] mr-2">•</span>
-                    <p class="body-m">Average：9 個月/ cycle（1.33 次/年）</p>
-                  </li>
-                  <li class="flex items-start">
-                    <span class="text-[#FBB931] mr-2">•</span>
-                    <p class="body-m">Bull：6 個月/ cycle（2.0 次/年）</p>
-                  </li>
-                </ul>
-                <p class="body-xs text-[#40444C] mt-4">備註：週期越短，年度可重複次數越高，現金收益率提升</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        </div>
-        
-        <!-- Page Number Footer -->
-        <div class="page-number-footer">
-          <p class="body-xs text-[#40444C]">3</p>
-        </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========================================
-         SLIDE 4: ARCHITECTURE DIAGRAM
-         ======================================== -->
-    <section class="slide scrollable bg-[#F9F9F9]" aria-label="第 4 頁：架構示意" role="region" style="padding: 0 !important;">
-      <div class="w-full h-full flex flex-col relative">
-        <!-- Header: Logo and Date -->
-        <div class="slide-header">
-          <img src="Logos/TextLogo.png" alt="MoreHarvest" class="h-6 md:h-8 relative z-10" />
-          <span class="body-s text-[#40444C]">2026</span>
-        </div>
-        <div class="slide-header-line"></div>
-        
-        <!-- Content -->
-        <div class="flex-1 content-wrapper relative" style="padding-top: 0; padding-bottom: 0;">
-        <h2 class="headline-h2 mb-8">架構示意（對外投資人可用版本）</h2>
-        <p class="body-m text-[#6B7280] mb-8">投資人對外為股權工具；稅盾（如採用）為內部公司間融資安排</p>
-        
-        <div class="bg-white p-8 rounded-lg shadow-lg">
-          <div class="grid md:grid-cols-3 gap-8 items-start">
-            <!-- Left: Investors -->
-            <div class="text-center">
-              <div class="bg-[#F9F9F9] p-6 rounded-lg mb-4">
-                <h3 class="headline-h5 mb-2">投資人（LP/HNW）</h3>
-                <p class="body-m text-[#FBB931] font-semibold">出資 ¥800M</p>
-              </div>
-              <div class="bg-[#F9F9F9] p-6 rounded-lg">
-                <h3 class="headline-h5 mb-2">管理人（GP/Founder）</h3>
-                <p class="body-m text-[#FBB931] font-semibold">出資 ¥200M</p>
-              </div>
-            </div>
-            
-            <!-- Center: BVI/Cayman -->
-            <div class="text-center">
-              <div class="bg-[#F9F9F9] p-6 rounded-lg mb-4">
-                <h3 class="headline-h5 mb-3">BVI / Cayman Feeder</h3>
-                <ul class="space-y-2 text-left">
-                  <li class="body-s">• 優先股（投資人）</li>
-                  <li class="body-s">• 普通股（管理人）</li>
-                </ul>
-              </div>
-              <div class="flex flex-col gap-2">
-                <div class="bg-[#EDEEF1] p-4 rounded">
-                  <p class="body-s">認購優先股</p>
-                </div>
-                <div class="bg-[#EDEEF1] p-4 rounded">
-                  <p class="body-s">認購普通股</p>
-                </div>
-                <div class="bg-[#EDEEF1] p-4 rounded">
-                  <p class="body-s">（可選）公司間借款</p>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Right: Japan KK -->
-            <div class="text-center">
-              <div class="bg-[#F9F9F9] p-6 rounded-lg mb-4">
-                <h3 class="headline-h5 mb-2">日本營運 KK（熊本）</h3>
-                <ul class="space-y-2 text-left">
-                  <li class="body-s">• 收購/翻修/轉售</li>
-                  <li class="body-s">• 日本公司稅（模型 35%）</li>
-                </ul>
-              </div>
-              <div class="bg-[#F9F9F9] p-6 rounded-lg">
-                <h3 class="headline-h5 mb-2">台灣服務公司</h3>
-                <p class="body-s">技術/行銷服務費：營收 3%（稅盾）</p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="mt-8 pt-8 border-t border-[#EDEEF1]">
-            <p class="body-xs text-[#6B7280]">投資人對外＝股權工具；「5%」以 Preferred Return/ Hurdle 呈現（避免被解讀為放款產品）。</p>
-          </div>
-        </div>
-        </div>
-        
-        <!-- Page Number Footer -->
-        <div class="page-number-footer">
-          <p class="body-xs text-[#40444C]">4</p>
-        </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========================================
-         SLIDE 5: CORE TERMS
-         ======================================== -->
-    <section class="slide scrollable bg-white" aria-label="第 5 頁：核心條款" role="region" style="padding: 0 !important;">
-      <div class="w-full h-full flex flex-col relative">
-        <!-- Header: Logo and Date -->
-        <div class="slide-header">
-          <img src="Logos/TextLogo.png" alt="MoreHarvest" class="h-6 md:h-8 relative z-10" />
-          <span class="body-s text-[#40444C]">2026</span>
-        </div>
-        <div class="slide-header-line"></div>
-        
-        <!-- Content -->
-        <div class="flex-1 content-wrapper relative" style="padding-top: 0 !important; padding-bottom: 0; min-width: max-content; width: 100%; max-width: none;">
-        <h2 class="headline-h2 mb-6">核心條款（投資人對外版本）</h2>
-        <p class="body-m text-[#40444C] mb-6">建議用語：Preferred Return / 優先分配（避免「利息」描述）</p>
-        
-        <div class="space-y-4" style="min-width: max-content;">
-          <div class="bg-[#F9F9F9] p-5 rounded-lg" style="min-width: max-content;">
-            <h3 class="headline-h5 mb-2 text-[#FBB931] whitespace-normal">• 募集規模：¥1.0B（投資人 ¥800M 優先股；管理人 ¥200M 普通股）</h3>
-          </div>
-          
-          <div class="bg-[#F9F9F9] p-5 rounded-lg" style="min-width: max-content;">
-            <h3 class="headline-h5 mb-2 text-[#FBB931] whitespace-normal">• 費用：0% 管理費；績效費（Carry）= 稅後利潤的 20%</h3>
-          </div>
-          
-          <div class="bg-[#F9F9F9] p-5 rounded-lg" style="min-width: max-content;">
-            <h3 class="headline-h5 mb-2 text-[#FBB931] whitespace-normal">• 優先報酬：投資人優先股享 5% Preferred Return（可設定為每 cycle 或年化；建議明確定義）</h3>
-          </div>
-          
-          <div class="bg-[#F9F9F9] p-5 rounded-lg" style="min-width: max-content;">
-            <h3 class="headline-h5 mb-2 text-[#FBB931] whitespace-normal">• 分配順序（概念）：(1) 支付累積 Preferred Return → (2)（可選）返還優先股本金 → (3) 支付績效費 → (4) 剩餘利潤依 80/20 分配</h3>
-          </div>
-          
-          <div class="bg-[#F9F9F9] p-5 rounded-lg" style="min-width: max-content;">
-            <h3 class="headline-h5 mb-2 text-[#FBB931] whitespace-normal">• 報告/治理：每 cycle 成交與成本明細、資金使用、已售/在售庫存、現金結餘與下一 cycle 佈局</h3>
-          </div>
-          
-          <div class="bg-[#F9F9F9] p-5 rounded-lg" style="min-width: max-content;">
-            <h3 class="headline-h5 mb-2 text-[#FBB931] whitespace-normal">• 風險揭露：市場售價波動、工期延誤、成本上升、稅務/預扣稅、移轉訂價與合規等</h3>
-          </div>
-        </div>
-        
-        <p class="body-xs text-[#40444C] mt-6 whitespace-normal">備註：若內部採公司間借款以產生日本利息費用稅盾，須同時評估日本利息扣除限制與對境外利息/股利之預扣稅對「淨到投資人」的影響。</p>
-        
-        <!-- Page Number Footer -->
-        <div class="page-number-footer">
-          <p class="body-xs text-[#40444C]">5</p>
-        </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========================================
-         SLIDE 6: SINGLE UNIT CALCULATION
-         ======================================== -->
-    <section class="slide scrollable bg-[#F9F9F9]" aria-label="第 6 頁：單戶採算" role="region" style="padding: 0 !important;">
-      <div class="w-full h-full flex flex-col relative">
-        <!-- Header: Logo and Date -->
-        <div class="slide-header">
-          <img src="Logos/TextLogo.png" alt="MoreHarvest" class="h-6 md:h-8 relative z-10" />
-          <span class="body-s text-[#40444C]">2026</span>
-        </div>
-        <div class="slide-header-line"></div>
-        
-        <!-- Content -->
-        <div class="flex-1 content-wrapper relative" style="padding-top: 0; padding-bottom: 0;">
-        <h2 class="headline-h2 mb-8">單戶採算（Excel 兩個案例）</h2>
-        <p class="body-m text-[#6B7280] mb-8">Case A / Case B：用於估算每戶投入資金、售價與費用結構</p>
-        
-        <div class="grid md:grid-cols-2 gap-8">
-          <!-- Case A -->
-          <div class="bg-white p-8 rounded-lg shadow-lg">
-            <h3 class="headline-h4 mb-6 text-[#FBB931]">Case A（每戶）</h3>
-            <div class="space-y-4">
-              <div class="flex justify-between items-center pb-4 border-b border-[#EDEEF1]">
-                <span class="body-m">投入資金：</span>
-                <span class="headline-h5">¥32.62M</span>
-              </div>
-              <div class="flex justify-between items-center pb-4 border-b border-[#EDEEF1]">
-                <span class="body-m">售價：</span>
-                <span class="headline-h5">¥42.00M</span>
-              </div>
-              <div class="pt-2">
-                <p class="body-s font-semibold mb-3">銷售成本：</p>
-                <ul class="space-y-2 ml-4">
-                  <li class="body-s">• 仲介：¥1.26M</li>
-                  <li class="body-s">• 瑕疵保固：¥1.244M</li>
-                  <li class="body-s">• 雜費：¥0.80M</li>
-                </ul>
-              </div>
-              <div class="pt-2">
-                <p class="body-s font-semibold">融資/利息線：</p>
-                <p class="body-s ml-4">5% × 投入資金 = ¥1.631M</p>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Case B -->
-          <div class="bg-white p-8 rounded-lg shadow-lg">
-            <h3 class="headline-h4 mb-6 text-[#FBB931]">Case B（每戶）</h3>
-            <div class="space-y-4">
-              <div class="flex justify-between items-center pb-4 border-b border-[#EDEEF1]">
-                <span class="body-m">投入資金：</span>
-                <span class="headline-h5">¥33.87M</span>
-              </div>
-              <div class="flex justify-between items-center pb-4 border-b border-[#EDEEF1]">
-                <span class="body-m">售價：</span>
-                <span class="headline-h5">¥43.00M</span>
-              </div>
-              <div class="pt-2">
-                <p class="body-s font-semibold mb-3">銷售成本：</p>
-                <ul class="space-y-2 ml-4">
-                  <li class="body-s">• 仲介：¥1.29M</li>
-                  <li class="body-s">• 瑕疵保固：¥1.349M</li>
-                  <li class="body-s">• 雜費：¥0.80M</li>
-                </ul>
-              </div>
-              <div class="pt-2">
-                <p class="body-s font-semibold">融資/利息線：</p>
-                <p class="body-s ml-4">5% × 投入資金 = ¥1.693M</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <p class="body-m text-[#6B7280] mt-8 text-center">額外稅盾：台灣技術/行銷服務費 = 營收 3%/cycle（需實質與移轉訂價支持）</p>
-        <!-- Page Number Footer -->
-        <div class="page-number-footer">
-          <p class="body-xs text-[#40444C]">6</p>
-        </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========================================
-         SLIDE 7: SCALING TO 1.0B
-         ======================================== -->
-    <section class="slide scrollable bg-white" aria-label="第 7 頁：擴張到 1.0B" role="region" style="padding: 0 !important;">
-      <div class="w-full h-full flex flex-col relative">
-        <!-- Header: Logo and Date -->
-        <div class="slide-header">
-          <img src="Logos/TextLogo.png" alt="MoreHarvest" class="h-6 md:h-8 relative z-10" />
-          <span class="body-s text-[#40444C]">2026</span>
-        </div>
-        <div class="slide-header-line"></div>
-        
-        <!-- Content -->
-        <div class="flex-1 content-wrapper relative" style="padding-top: 0; padding-bottom: 0;">
-        <h2 class="headline-h2 mb-8">擴張到 ¥1.0B：每 cycle 30 戶（A/B 各 15 戶）</h2>
-        <p class="body-m text-[#6B7280] mb-8">以混合後每戶約 ¥33.25M 投入估算，可在單一 cycle 部署約 30 戶</p>
-        
-        <div class="grid md:grid-cols-2 gap-8 md:gap-12">
-          <!-- Left Column -->
-          <div>
-            <h3 class="headline-h4 mb-6 text-[#FBB931]">資金配置</h3>
-            <ul class="space-y-4">
-              <li class="flex items-start">
-                <span class="text-[#FBB931] mr-2">•</span>
-                <div>
-                  <p class="body-m">總資金：¥1,000M（投資人 ¥800M 優先股 + 管理人 ¥200M 普通股）</p>
-                </div>
-              </li>
-              <li class="flex items-start">
-                <span class="text-[#FBB931] mr-2">•</span>
-                <div>
-                  <p class="body-m">每 cycle 部署：30 戶（Case A 15 戶 + Case B 15 戶；50/50 mix）</p>
-                </div>
-              </li>
-            </ul>
-            
-            <h3 class="headline-h4 mb-6 text-[#FBB931] mt-8">Cycle 情境</h3>
-            <ul class="space-y-4">
-              <li class="flex items-start">
-                <span class="text-[#FBB931] mr-2">•</span>
-                <div>
-                  <p class="body-m">Bear：12 個月/ cycle（1.0 次/年）</p>
-                </div>
-              </li>
-              <li class="flex items-start">
-                <span class="text-[#FBB931] mr-2">•</span>
-                <div>
-                  <p class="body-m">Average：9 個月/ cycle（1.33 次/年）</p>
-                </div>
-              </li>
-              <li class="flex items-start">
-                <span class="text-[#FBB931] mr-2">•</span>
-                <div>
-                  <p class="body-m">Bull：6 個月/ cycle（2.0 次/年）</p>
-                </div>
-              </li>
-            </ul>
-            <p class="body-xs text-[#6B7280] mt-4">意涵：週期越短 → 資金周轉越快 → 年度可複製次數越多</p>
-          </div>
-          
-          <!-- Right Column -->
-          <div>
-            <h3 class="headline-h4 mb-6 text-[#FBB931]">運營節奏（示例）</h3>
-            <ul class="space-y-4">
-              <li class="flex items-start">
-                <span class="text-[#FBB931] mr-2">•</span>
-                <div>
-                  <p class="body-m font-semibold">收購：</p>
-                  <p class="body-s text-[#6B7280]">鎖定區域/屋況可控/轉售流動性佳</p>
-                </div>
-              </li>
-              <li class="flex items-start">
-                <span class="text-[#FBB931] mr-2">•</span>
-                <div>
-                  <p class="body-m font-semibold">翻修：</p>
-                  <p class="body-s text-[#6B7280]">標準化施工規格與工期管理</p>
-                </div>
-              </li>
-              <li class="flex items-start">
-                <span class="text-[#FBB931] mr-2">•</span>
-                <div>
-                  <p class="body-m font-semibold">出售：</p>
-                  <p class="body-s text-[#6B7280]">合作通路 + 定價策略 + 交屋流程</p>
-                </div>
-              </li>
-            </ul>
-            
-            <div class="mt-8 bg-[#F9F9F9] p-6 rounded-lg">
-              <p class="body-m font-semibold mb-2">KPI：</p>
-              <p class="body-s text-[#6B7280]">成交天數、工期、每戶成本偏差、毛利、庫存週轉</p>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Page Number Footer -->
-        <div class="page-number-footer">
-          <p class="body-xs text-[#40444C]">7</p>
-        </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========================================
-         SLIDE 8: CYCLE P&L
-         ======================================== -->
-    <section class="slide scrollable bg-[#F9F9F9]" aria-label="第 8 頁：每 cycle 專案損益" role="region" style="padding: 0 !important;">
-      <div class="w-full h-full flex flex-col relative">
-        <!-- Header: Logo and Date -->
-        <div class="slide-header">
-          <img src="Logos/TextLogo.png" alt="MoreHarvest" class="h-6 md:h-8 relative z-10" />
-          <span class="body-s text-[#40444C]">2026</span>
-        </div>
-        <div class="slide-header-line"></div>
-        
-        <!-- Content -->
-        <div class="flex-1 content-wrapper relative" style="padding-top: 0; padding-bottom: 0;">
-        <h2 class="headline-h2 mb-8">每 cycle 專案損益（30 戶、50/50 mix）</h2>
-        <p class="body-m text-[#6B7280] mb-8">稅前利益已扣除：5% 利息費用 + 3% 台灣服務費</p>
-        
-        <div class="bg-white p-8 rounded-lg shadow-lg">
-          <div class="overflow-x-auto">
-            <table class="w-full border-collapse">
-              <tbody>
-                <tr>
-                  <td class="p-4 body-m font-semibold">營收（30 × ¥42.5M）</td>
-                  <td class="p-4 body-m text-right">¥1,275.000M</td>
-                </tr>
-                <tr class="border-t border-[#EDEEF1]">
-                  <td class="p-4 body-s pl-8">- 購入+翻修資本</td>
-                  <td class="p-4 body-s text-right">¥997.353M</td>
-                </tr>
-                <tr>
-                  <td class="p-4 body-s pl-8">- 仲介費</td>
-                  <td class="p-4 body-s text-right">¥38.250M</td>
-                </tr>
-                <tr>
-                  <td class="p-4 body-s pl-8">- 瑕疵保固</td>
-                  <td class="p-4 body-s text-right">¥38.895M</td>
-                </tr>
-                <tr>
-                  <td class="p-4 body-s pl-8">- 雜費</td>
-                  <td class="p-4 body-s text-right">¥24.000M</td>
-                </tr>
-                <tr>
-                  <td class="p-4 body-s pl-8">- 利息費用（5%/cycle）</td>
-                  <td class="p-4 body-s text-right">¥49.868M</td>
-                </tr>
-                <tr>
-                  <td class="p-4 body-s pl-8">- 台灣服務費（營收 3%）</td>
-                  <td class="p-4 body-s text-right">¥38.250M</td>
-                </tr>
-                <tr class="border-t-2 border-[#EDEEF1]">
-                  <td class="p-4 body-m font-semibold">= 日本稅前利益（PBT）</td>
-                  <td class="p-4 body-m text-right text-[#19B64E]">¥88.384M</td>
-                </tr>
-                <tr>
-                  <td class="p-4 body-s pl-8">- 日本公司稅（35%）</td>
-                  <td class="p-4 body-s text-right">¥30.935M</td>
-                </tr>
-                <tr class="border-t-2 border-[#FBB931]">
-                  <td class="p-4 body-m font-semibold">= 稅後利益（PAT）</td>
-                  <td class="p-4 body-m text-right text-[#FBB931] font-bold">¥57.450M</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          
-          <p class="body-xs text-[#6B7280] mt-6">提醒：若利息費用採公司間借款，需同時評估日本利息扣除限制與對境外支付的預扣稅（WHT）對淨回收的影響。</p>
-        <!-- Page Number Footer -->
-        <div class="page-number-footer">
-          <p class="body-xs text-[#40444C]">8</p>
-        </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========================================
-         SLIDE 8: WATERFALL DISTRIBUTION
-         ======================================== -->
-    <section class="slide scrollable bg-white" aria-label="第 9 頁：Waterfall 分配" role="region" style="padding: 0 !important;">
-      <div class="w-full h-full flex flex-col relative">
-        <!-- Header: Logo and Date -->
-        <div class="slide-header">
-          <img src="Logos/TextLogo.png" alt="MoreHarvest" class="h-6 md:h-8 relative z-10" />
-          <span class="body-s text-[#40444C]">2026</span>
-        </div>
-        <div class="slide-header-line"></div>
-        
-        <!-- Content -->
-        <div class="flex-1 content-wrapper relative" style="padding-top: 0; padding-bottom: 0;">
-        <h2 class="headline-h2 mb-8">Waterfall 分配（示例：每 cycle）</h2>
-        <p class="body-m text-[#6B7280] mb-8">基於稅後利益 ¥57.450M；績效費 20%（稅後利潤基礎）</p>
-        
-        <div class="grid md:grid-cols-2 gap-8">
-          <!-- Left: Distribution Steps -->
-          <div>
-            <h3 class="headline-h4 mb-6 text-[#FBB931]">分配步驟（概念）</h3>
-            <ol class="space-y-4">
-              <li class="flex items-start">
-                <span class="text-[#FBB931] mr-2 font-bold">1)</span>
-                <div>
-                  <p class="body-m font-semibold">支付優先報酬（5% Preferred Return）</p>
-                  <ul class="mt-2 space-y-1 ml-4">
-                    <li class="body-s">• 投資人：¥40.0M / cycle</li>
-                    <li class="body-s">• 管理人：¥10.0M / cycle</li>
-                  </ul>
-                </div>
-              </li>
-              <li class="flex items-start">
-                <span class="text-[#FBB931] mr-2 font-bold">2)</span>
-                <p class="body-m">日本公司稅：模型以 35% 計（已反映在稅後利益）</p>
-              </li>
-              <li class="flex items-start">
-                <span class="text-[#FBB931] mr-2 font-bold">3)</span>
-                <p class="body-m">績效費：稅後利益的 20%</p>
-              </li>
-              <li class="flex items-start">
-                <span class="text-[#FBB931] mr-2 font-bold">4)</span>
-                <p class="body-m">剩餘稅後利潤依 80/20 分配（投資人/管理人）</p>
-              </li>
-            </ol>
-          </div>
-          
-          <!-- Right: Numbers -->
-          <div>
-            <h3 class="headline-h4 mb-6 text-[#FBB931]">每 cycle 數字（基準版，不含 WHT）</h3>
-            <div class="bg-[#F9F9F9] p-6 rounded-lg space-y-4">
-              <div class="flex justify-between items-center pb-4 border-b border-[#EDEEF1]">
-                <span class="body-s">稅後利益（PAT）</span>
-                <span class="body-m font-semibold">¥57.450M</span>
-              </div>
-              <div class="flex justify-between items-center pb-4 border-b border-[#EDEEF1]">
-                <span class="body-s">績效費（20% × PAT）</span>
-                <span class="body-m">¥11.490M</span>
-              </div>
-              <div class="flex justify-between items-center pb-4 border-b border-[#EDEEF1]">
-                <span class="body-s">可分配稅後利潤（PAT - 績效費）</span>
-                <span class="body-m">¥45.960M</span>
-              </div>
-              <div class="flex justify-between items-center pb-4 border-b border-[#EDEEF1]">
-                <span class="body-s">投資人分紅（80%）</span>
-                <span class="body-m text-[#19B64E]">¥36.768M</span>
-              </div>
-              <div class="flex justify-between items-center pb-4 border-b border-[#EDEEF1]">
-                <span class="body-s">管理人分紅（20%）</span>
-                <span class="body-m">¥9.192M</span>
-              </div>
-              <div class="flex justify-between items-center pt-4 border-t-2 border-[#FBB931]">
-                <span class="body-m font-semibold">投資人合計（含 5% Preferred Return）</span>
-                <span class="headline-h5 text-[#FBB931]">¥76.768M</span>
-              </div>
-              <div class="flex justify-between items-center">
-                <span class="body-m font-semibold">管理人合計（含 5% + 3% 服務費）</span>
-                <span class="headline-h5 text-[#FBB931]">¥68.932M</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <p class="body-xs text-[#6B7280] mt-8">備註：投資人對外不以「利息」描述；內部若採公司間借款，會另受 WHT 與利息扣除限制影響。</p>
-        <!-- Page Number Footer -->
-        <div class="page-number-footer">
-          <p class="body-xs text-[#40444C]">9</p>
-        </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========================================
-         SLIDE 10: SCENARIO ANALYSIS
-         ======================================== -->
-    <section class="slide scrollable bg-[#F9F9F9]" aria-label="第 10 頁：情境分析" role="region" style="padding: 0 !important;">
-      <div class="w-full h-full flex flex-col relative">
-        <!-- Header: Logo and Date -->
-        <div class="slide-header">
-          <img src="Logos/TextLogo.png" alt="MoreHarvest" class="h-6 md:h-8 relative z-10" />
-          <span class="body-s text-[#40444C]">2026</span>
-        </div>
-        <div class="slide-header-line"></div>
-        
-        <!-- Content -->
-        <div class="flex-1 content-wrapper relative" style="padding-top: 0; padding-bottom: 0;">
-        <h2 class="headline-h2 mb-8">情境分析：投資人與管理人收入（基準版）</h2>
-        <p class="body-m text-[#6B7280] mb-8">差異僅在週期長短→每年 cycle 次數不同；每 cycle 經濟假設相同</p>
-        
-        <div class="bg-white p-8 rounded-lg shadow-lg mb-8">
-          <div class="grid md:grid-cols-2 gap-8 mb-8">
-            <div>
-              <h3 class="headline-h5 mb-4 text-[#FBB931]">投資人（¥800M）</h3>
-              <p class="body-s mb-2">每 cycle：¥76.768M</p>
-              <p class="body-xs text-[#6B7280]">（Preferred Return ¥40.0M + 分紅 ¥36.768M）</p>
-            </div>
-            <div>
-              <h3 class="headline-h5 mb-4 text-[#FBB931]">管理人（¥200M + 管理角色）</h3>
-              <p class="body-s mb-2">每 cycle：¥68.932M</p>
-              <p class="body-xs text-[#6B7280]">（5% ¥10.0M + 3% 服務費 ¥38.25M + 分紅 ¥9.192M + 績效費 ¥11.49M）</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="bg-white p-8 rounded-lg shadow-lg">
-          <div class="overflow-x-auto">
-            <table class="w-full border-collapse">
-              <thead>
-                <tr class="border-b-2 border-[#EDEEF1]">
-                  <th class="text-left p-4 headline-h5">情境</th>
-                  <th class="text-left p-4 headline-h5">Cycles/年</th>
-                  <th class="text-right p-4 headline-h5">投資人/年</th>
-                  <th class="text-right p-4 headline-h5">投資人年化現金收益率</th>
-                  <th class="text-right p-4 headline-h5">管理人/年</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="border-b border-[#EDEEF1]">
-                  <td class="p-4 body-s">Bear（12m）</td>
-                  <td class="p-4 body-s">1.0</td>
-                  <td class="p-4 body-s text-right">¥76.768M</td>
-                  <td class="p-4 body-s text-right text-[#19B64E] font-semibold">9.60%</td>
-                  <td class="p-4 body-s text-right">¥68.932M</td>
-                </tr>
-                <tr class="border-b border-[#EDEEF1]">
-                  <td class="p-4 body-s">Average（9m）</td>
-                  <td class="p-4 body-s">1.33</td>
-                  <td class="p-4 body-s text-right">¥102.357M</td>
-                  <td class="p-4 body-s text-right text-[#19B64E] font-semibold">12.79%</td>
-                  <td class="p-4 body-s text-right">¥91.909M</td>
-                </tr>
-                <tr>
-                  <td class="p-4 body-s">Bull（6m）</td>
-                  <td class="p-4 body-s">2.0</td>
-                  <td class="p-4 body-s text-right">¥153.536M</td>
-                  <td class="p-4 body-s text-right text-[#19B64E] font-semibold">19.19%</td>
-                  <td class="p-4 body-s text-right">¥137.864M</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        
-        <p class="body-xs text-[#6B7280] mt-6">註：上述為「不含日本預扣稅（WHT）流失」之基準版。若上層現金回流涉及境外利息/股利支付，需另行呈現「淨到投資人」版本。</p>
-        <!-- Page Number Footer -->
-        <div class="page-number-footer">
-          <p class="body-xs text-[#40444C]">10</p>
-        </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========================================
-         SLIDE 11: WHT COMPARISON
-         ======================================== -->
-    <section class="slide scrollable bg-white" aria-label="第 11 頁：日本預扣稅影響" role="region" style="padding: 0 !important;">
-      <div class="w-full h-full flex flex-col relative">
-        <!-- Header: Logo and Date -->
-        <div class="slide-header">
-          <img src="Logos/TextLogo.png" alt="MoreHarvest" class="h-6 md:h-8 relative z-10" />
-          <span class="body-s text-[#40444C]">2026</span>
-        </div>
-        <div class="slide-header-line"></div>
-        
-        <!-- Content -->
-        <div class="flex-1 content-wrapper relative" style="padding-top: 0; padding-bottom: 0;">
-        <h2 class="headline-h2 mb-8">日本預扣稅（WHT）對「淨到投資人」的影響（比較）</h2>
-        <p class="body-m text-[#6B7280] mb-8">示例：BVI 收款 vs 台灣條約收款（僅作敏感度；實務以稅務顧問為準）</p>
-        
-        <div class="bg-[#F9F9F9] p-6 rounded-lg mb-8">
-          <h3 class="headline-h4 mb-4 text-[#FBB931]">核心結論（以 30 戶/cycle、50/50 mix 示範）</h3>
-          <ul class="space-y-3">
-            <li class="flex items-start">
-              <span class="text-[#FBB931] mr-2">•</span>
-              <p class="body-m">BVI（無條約）假設：利息/股利 WHT 20.42% → 投資人淨額/ cycle 約 ¥61.092M</p>
-            </li>
-            <li class="flex items-start">
-              <span class="text-[#FBB931] mr-2">•</span>
-              <p class="body-m">台灣條約收款假設：利息/股利 WHT 10% → 投資人淨額/ cycle 約 ¥69.091M</p>
-            </li>
-            <li class="flex items-start">
-              <span class="text-[#FBB931] mr-2">•</span>
-              <p class="body-m">差異：投資人每 cycle 淨額約 +¥7.999M（週期越多，年度差異越大）</p>
-            </li>
-          </ul>
-        </div>
-        
+<!--                 <li class="flex items-start"> -->
+<!--                   <span class="text-[#FBB931] mr-2">•</span> -->
+<!--                   <p class="body-m">投資人：優先股（Preferred Shares），享 5% Preferred Return（Hurdle）</p> -->
+<!--                 </li> -->
+<!--                 <li class="flex items-start"> -->
+<!--                   <span class="text-[#FBB931] mr-2">•</span> -->
+<!--                   <p class="body-m">管理人：普通股（Common Shares）+ 績效費 20%（稅後利潤基礎）</p> -->
+<!--                 </li> -->
+<!--                 <li class="flex items-start"> -->
+<!--                   <span class="text-[#FBB931] mr-2">•</span> -->
+<!--                   <p class="body-m">管理費：0%</p> -->
+<!--                 </li> -->
+<!--                 <li class="flex items-start"> -->
+<!--                   <span class="text-[#FBB931] mr-2">•</span> -->
+<!--                   <p class="body-m">稅務：日本 KK 依公司稅制（模型採 35%）</p> -->
+<!--                 </li> -->
+<!--               </ul> -->
+<!--             </div> -->
+<!--              -->
+<!--             <!-- Divider --> -->
+<!--             <div class="border-t border-[#EDEEF1] pt-8"> -->
+<!--               <!-- 週期 --> -->
+<!--               <div> -->
+<!--                 <h3 class="headline-h4 mb-4 text-[#FBB931]">週期（Cycle）</h3> -->
+<!--                 <ul class="space-y-3"> -->
+<!--                   <li class="flex items-start"> -->
+<!--                     <span class="text-[#FBB931] mr-2">•</span> -->
+<!--                     <p class="body-m">Bear：12 個月/ cycle（1.0 次/年）</p> -->
+<!--                   </li> -->
+<!--                   <li class="flex items-start"> -->
+<!--                     <span class="text-[#FBB931] mr-2">•</span> -->
+<!--                     <p class="body-m">Average：9 個月/ cycle（1.33 次/年）</p> -->
+<!--                   </li> -->
+<!--                   <li class="flex items-start"> -->
+<!--                     <span class="text-[#FBB931] mr-2">•</span> -->
+<!--                     <p class="body-m">Bull：6 個月/ cycle（2.0 次/年）</p> -->
+<!--                 </ul> -->
+<!--                 <p class="body-xs text-[#40444C] mt-4">備註：週期越短，年度可重複次數越高，現金收益率提升</p> -->
+<!--               </div> -->
+<!--             </div> -->
+<!--           </div> -->
+<!--         </div> -->
+<!--         </div> -->
+<!--          -->
+<!--         <!-- Page Number Footer --> -->
+<!--         <div class="page-number-footer"> -->
+<!--           <p class="body-xs text-[#40444C]">3</p> -->
+<!--         </div> -->
+<!--         </div> -->
+<!--       </div> -->
+<!--     </section> -->
+<!--  -->
+<!--     <!-- ======================================== -->
+<!--          SLIDE 4: ARCHITECTURE DIAGRAM -->
+<!--          ======================================== --> -->
+<!--     <section class="slide scrollable bg-[#F9F9F9]" aria-label="第 4 頁：架構示意" role="region" style="padding: 0 !important;"> -->
+<!--       <div class="w-full h-full flex flex-col relative"> -->
+<!--         <!-- Header: Logo and Date --> -->
+<!--         <div class="slide-header"> -->
+<!--           <img src="Logos/TextLogo.png" alt="MoreHarvest" class="h-6 md:h-8 relative z-10" /> -->
+<!--           <span class="body-s text-[#40444C]">2026</span> -->
+<!--         </div> -->
+<!--         <div class="slide-header-line"></div> -->
+<!--          -->
+<!--         <!-- Content --> -->
+<!--         <div class="flex-1 content-wrapper relative" style="padding-top: 0; padding-bottom: 0;"> -->
+<!--         <h2 class="headline-h2 mb-8">架構示意（對外投資人可用版本）</h2> -->
+<!--         <p class="body-m text-[#6B7280] mb-8">投資人對外為股權工具；稅盾（如採用）為內部公司間融資安排</p> -->
+<!--          -->
+<!--         <div class="bg-white p-8 rounded-lg shadow-lg"> -->
+<!--           <div class="grid md:grid-cols-3 gap-8 items-start"> -->
+<!--             <!-- Left: Investors --> -->
+<!--             <div class="text-center"> -->
+<!--               <div class="bg-[#F9F9F9] p-6 rounded-lg mb-4"> -->
+<!--                 <h3 class="headline-h5 mb-2">投資人（LP/HNW）</h3> -->
+<!--                 <p class="body-m text-[#FBB931] font-semibold">出資 ¥800M</p> -->
+<!--               </div> -->
+<!--               <div class="bg-[#F9F9F9] p-6 rounded-lg"> -->
+<!--                 <h3 class="headline-h5 mb-2">管理人（GP/Founder）</h3> -->
+<!--                 <p class="body-m text-[#FBB931] font-semibold">出資 ¥200M</p> -->
+<!--               </div> -->
+<!--             </div> -->
+<!--              -->
+<!--             <!-- Center: BVI/Cayman --> -->
+<!--             <div class="text-center"> -->
+<!--               <div class="bg-[#F9F9F9] p-6 rounded-lg mb-4"> -->
+<!--                 <h3 class="headline-h5 mb-3">BVI / Cayman Feeder</h3> -->
+<!--                 <ul class="space-y-2 text-left"> -->
+<!--                   <li class="body-s">• 優先股（投資人）</li> -->
+<!--                   <li class="body-s">• 普通股（管理人）</li> -->
+<!--                 </ul> -->
+<!--               </div> -->
+<!--               <div class="flex flex-col gap-2"> -->
+<!--                 <div class="bg-[#EDEEF1] p-4 rounded"> -->
+<!--                   <p class="body-s">認購優先股</p> -->
+<!--                 </div> -->
+<!--                 <div class="bg-[#EDEEF1] p-4 rounded"> -->
+<!--                   <p class="body-s">認購普通股</p> -->
+<!--                 </div> -->
+<!--                 <div class="bg-[#EDEEF1] p-4 rounded"> -->
+<!--                   <p class="body-s">（可選）公司間借款</p> -->
+<!--                 </div> -->
+<!--               </div> -->
+<!--             </div> -->
+<!--              -->
+<!--             <!-- Right: Japan KK --> -->
+<!--             <div class="text-center"> -->
+<!--               <div class="bg-[#F9F9F9] p-6 rounded-lg mb-4"> -->
+<!--                 <h3 class="headline-h5 mb-2">日本營運 KK（熊本）</h3> -->
+<!--                 <ul class="space-y-2 text-left"> -->
+<!--                   <li class="body-s">• 收購/翻修/轉售</li> -->
+<!--                   <li class="body-s">• 日本公司稅（模型 35%）</li> -->
+<!--                 </ul> -->
+<!--               </div> -->
+<!--               <div class="bg-[#F9F9F9] p-6 rounded-lg"> -->
+<!--                 <h3 class="headline-h5 mb-2">台灣服務公司</h3> -->
+<!--                 <p class="body-s">技術/行銷服務費：營收 3%（稅盾）</p> -->
+<!--               </div> -->
+<!--             </div> -->
+<!--           </div> -->
+<!--            -->
+<!--           <div class="mt-8 pt-8 border-t border-[#EDEEF1]"> -->
+<!--             <p class="body-xs text-[#6B7280]">投資人對外＝股權工具；「5%」以 Preferred Return/ Hurdle 呈現（避免被解讀為放款產品）。</p> -->
+<!--           </div> -->
+<!--         </div> -->
+<!--         </div> -->
+<!--          -->
+<!--         <!-- Page Number Footer --> -->
+<!--         <div class="page-number-footer"> -->
+<!--           <p class="body-xs text-[#40444C]">4</p> -->
+<!--         </div> -->
+<!--         </div> -->
+<!--       </div> -->
+<!--     </section> -->
+<!--  -->
+<!--     <!-- ======================================== -->
+<!--          SLIDE 5: CORE TERMS -->
+<!--          ======================================== --> -->
+<!--     <section class="slide scrollable bg-white" aria-label="第 5 頁：核心條款" role="region" style="padding: 0 !important;"> -->
+<!--       <div class="w-full h-full flex flex-col relative"> -->
+<!--         <!-- Header: Logo and Date --> -->
+<!--         <div class="slide-header"> -->
+<!--           <img src="Logos/TextLogo.png" alt="MoreHarvest" class="h-6 md:h-8 relative z-10" /> -->
+<!--           <span class="body-s text-[#40444C]">2026</span> -->
+<!--         </div> -->
+<!--         <div class="slide-header-line"></div> -->
+<!--          -->
+<!--         <!-- Content --> -->
+<!--         <div class="flex-1 content-wrapper relative" style="padding-top: 0 !important; padding-bottom: 0; min-width: max-content; width: 100%; max-width: none;"> -->
+<!--         <h2 class="headline-h2 mb-6">核心條款（投資人對外版本）</h2> -->
+<!--         <p class="body-m text-[#40444C] mb-6">建議用語：Preferred Return / 優先分配（避免「利息」描述）</p> -->
+<!--          -->
+<!--         <div class="space-y-4" style="min-width: max-content;"> -->
+<!--           <div class="bg-[#F9F9F9] p-5 rounded-lg" style="min-width: max-content;"> -->
+<!--             <h3 class="headline-h5 mb-2 text-[#FBB931] whitespace-normal">• 募集規模：¥1.0B（投資人 ¥800M 優先股；管理人 ¥200M 普通股）</h3> -->
+<!--           </div> -->
+<!--            -->
+<!--           <div class="bg-[#F9F9F9] p-5 rounded-lg" style="min-width: max-content;"> -->
+<!--             <h3 class="headline-h5 mb-2 text-[#FBB931] whitespace-normal">• 費用：0% 管理費；績效費（Carry）= 稅後利潤的 20%</h3> -->
+<!--           </div> -->
+<!--            -->
+<!--           <div class="bg-[#F9F9F9] p-5 rounded-lg" style="min-width: max-content;"> -->
+<!--             <h3 class="headline-h5 mb-2 text-[#FBB931] whitespace-normal">• 優先報酬：投資人優先股享 5% Preferred Return（可設定為每 cycle 或年化；建議明確定義）</h3> -->
+<!--           </div> -->
+<!--            -->
+<!--           <div class="bg-[#F9F9F9] p-5 rounded-lg" style="min-width: max-content;"> -->
+<!--             <h3 class="headline-h5 mb-2 text-[#FBB931] whitespace-normal">• 分配順序（概念）：(1) 支付累積 Preferred Return → (2)（可選）返還優先股本金 → (3) 支付績效費 → (4) 剩餘利潤依 80/20 分配</h3> -->
+<!--           </div> -->
+<!--            -->
+<!--           <div class="bg-[#F9F9F9] p-5 rounded-lg" style="min-width: max-content;"> -->
+<!--             <h3 class="headline-h5 mb-2 text-[#FBB931] whitespace-normal">• 報告/治理：每 cycle 成交與成本明細、資金使用、已售/在售庫存、現金結餘與下一 cycle 佈局</h3> -->
+<!--           </div> -->
+<!--            -->
+<!--           <div class="bg-[#F9F9F9] p-5 rounded-lg" style="min-width: max-content;"> -->
+<!--             <h3 class="headline-h5 mb-2 text-[#FBB931] whitespace-normal">• 風險揭露：市場售價波動、工期延誤、成本上升、稅務/預扣稅、移轉訂價與合規等</h3> -->
+<!--           </div> -->
+<!--         </div> -->
+<!--          -->
+<!--         <p class="body-xs text-[#40444C] mt-6 whitespace-normal">備註：若內部採公司間借款以產生日本利息費用稅盾，須同時評估日本利息扣除限制與對境外利息/股利之預扣稅對「淨到投資人」的影響。</p> -->
+<!--          -->
+<!--         <!-- Page Number Footer --> -->
+<!--         <div class="page-number-footer"> -->
+<!--           <p class="body-xs text-[#40444C]">5</p> -->
+<!--         </div> -->
+<!--         </div> -->
+<!--       </div> -->
+<!--     </section> -->
+<!--  -->
+<!--     <!-- ======================================== -->
+<!--          SLIDE 6: SINGLE UNIT CALCULATION -->
+<!--          ======================================== --> -->
+<!--     <section class="slide scrollable bg-[#F9F9F9]" aria-label="第 6 頁：單戶採算" role="region" style="padding: 0 !important;"> -->
+<!--       <div class="w-full h-full flex flex-col relative"> -->
+<!--         <!-- Header: Logo and Date --> -->
+<!--         <div class="slide-header"> -->
+<!--           <img src="Logos/TextLogo.png" alt="MoreHarvest" class="h-6 md:h-8 relative z-10" /> -->
+<!--           <span class="body-s text-[#40444C]">2026</span> -->
+<!--         </div> -->
+<!--         <div class="slide-header-line"></div> -->
+<!--          -->
+<!--         <!-- Content --> -->
+<!--         <div class="flex-1 content-wrapper relative" style="padding-top: 0; padding-bottom: 0;"> -->
+<!--         <h2 class="headline-h2 mb-8">單戶採算（Excel 兩個案例）</h2> -->
+<!--         <p class="body-m text-[#6B7280] mb-8">Case A / Case B：用於估算每戶投入資金、售價與費用結構</p> -->
+<!--          -->
+<!--         <div class="grid md:grid-cols-2 gap-8"> -->
+<!--           <!-- Case A --> -->
+<!--           <div class="bg-white p-8 rounded-lg shadow-lg"> -->
+<!--             <h3 class="headline-h4 mb-6 text-[#FBB931]">Case A（每戶）</h3> -->
+<!--             <div class="space-y-4"> -->
+<!--               <div class="flex justify-between items-center pb-4 border-b border-[#EDEEF1]"> -->
+<!--                 <span class="body-m">投入資金：</span> -->
+<!--                 <span class="headline-h5">¥32.62M</span> -->
+<!--               </div> -->
+<!--               <div class="flex justify-between items-center pb-4 border-b border-[#EDEEF1]"> -->
+<!--                 <span class="body-m">售價：</span> -->
+<!--                 <span class="headline-h5">¥42.00M</span> -->
+<!--               </div> -->
+<!--               <div class="pt-2"> -->
+<!--                 <p class="body-s font-semibold mb-3">銷售成本：</p> -->
+<!--                 <ul class="space-y-2 ml-4"> -->
+<!--                   <li class="body-s">• 仲介：¥1.26M</li> -->
+<!--                   <li class="body-s">• 瑕疵保固：¥1.244M</li> -->
+<!--                   <li class="body-s">• 雜費：¥0.80M</li> -->
+<!--                 </ul> -->
+<!--               </div> -->
+<!--               <div class="pt-2"> -->
+<!--                 <p class="body-s font-semibold">融資/利息線：</p> -->
+<!--                 <p class="body-s ml-4">5% × 投入資金 = ¥1.631M</p> -->
+<!--               </div> -->
+<!--             </div> -->
+<!--           </div> -->
+<!--            -->
+<!--           <!-- Case B --> -->
+<!--           <div class="bg-white p-8 rounded-lg shadow-lg"> -->
+<!--             <h3 class="headline-h4 mb-6 text-[#FBB931]">Case B（每戶）</h3> -->
+<!--             <div class="space-y-4"> -->
+<!--               <div class="flex justify-between items-center pb-4 border-b border-[#EDEEF1]"> -->
+<!--                 <span class="body-m">投入資金：</span> -->
+<!--                 <span class="headline-h5">¥33.87M</span> -->
+<!--               </div> -->
+<!--               <div class="flex justify-between items-center pb-4 border-b border-[#EDEEF1]"> -->
+<!--                 <span class="body-m">售價：</span> -->
+<!--                 <span class="headline-h5">¥43.00M</span> -->
+<!--               </div> -->
+<!--               <div class="pt-2"> -->
+<!--                 <p class="body-s font-semibold mb-3">銷售成本：</p> -->
+<!--                 <ul class="space-y-2 ml-4"> -->
+<!--                   <li class="body-s">• 仲介：¥1.29M</li> -->
+<!--                   <li class="body-s">• 瑕疵保固：¥1.349M</li> -->
+<!--                   <li class="body-s">• 雜費：¥0.80M</li> -->
+<!--                 </ul> -->
+<!--               </div> -->
+<!--               <div class="pt-2"> -->
+<!--                 <p class="body-s font-semibold">融資/利息線：</p> -->
+<!--                 <p class="body-s ml-4">5% × 投入資金 = ¥1.693M</p> -->
+<!--               </div> -->
+<!--             </div> -->
+<!--           </div> -->
+<!--         </div> -->
+<!--          -->
+<!--         <p class="body-m text-[#6B7280] mt-8 text-center">額外稅盾：台灣技術/行銷服務費 = 營收 3%/cycle（需實質與移轉訂價支持）</p> -->
+<!--         <!-- Page Number Footer --> -->
+<!--         <div class="page-number-footer"> -->
+<!--           <p class="body-xs text-[#40444C]">6</p> -->
+<!--         </div> -->
+<!--         </div> -->
+<!--       </div> -->
+<!--     </section> -->
+<!--  -->
+<!--     <!-- ======================================== -->
+<!--          SLIDE 7: SCALING TO 1.0B -->
+<!--          ======================================== --> -->
+<!--     <section class="slide scrollable bg-white" aria-label="第 7 頁：擴張到 1.0B" role="region" style="padding: 0 !important;"> -->
+<!--       <div class="w-full h-full flex flex-col relative"> -->
+<!--         <!-- Header: Logo and Date --> -->
+<!--         <div class="slide-header"> -->
+<!--           <img src="Logos/TextLogo.png" alt="MoreHarvest" class="h-6 md:h-8 relative z-10" /> -->
+<!--           <span class="body-s text-[#40444C]">2026</span> -->
+<!--         </div> -->
+<!--         <div class="slide-header-line"></div> -->
+<!--          -->
+<!--         <!-- Content --> -->
+<!--         <div class="flex-1 content-wrapper relative" style="padding-top: 0; padding-bottom: 0;"> -->
+<!--         <h2 class="headline-h2 mb-8">擴張到 ¥1.0B：每 cycle 30 戶（A/B 各 15 戶）</h2> -->
+<!--         <p class="body-m text-[#6B7280] mb-8">以混合後每戶約 ¥33.25M 投入估算，可在單一 cycle 部署約 30 戶</p> -->
+<!--          -->
+<!--         <div class="grid md:grid-cols-2 gap-8 md:gap-12"> -->
+<!--           <!-- Left Column --> -->
+<!--           <div> -->
+<!--             <h3 class="headline-h4 mb-6 text-[#FBB931]">資金配置</h3> -->
+<!--             <ul class="space-y-4"> -->
+<!--               <li class="flex items-start"> -->
+<!--                 <span class="text-[#FBB931] mr-2">•</span> -->
+<!--                 <div> -->
+<!--                   <p class="body-m">總資金：¥1,000M（投資人 ¥800M 優先股 + 管理人 ¥200M 普通股）</p> -->
+<!--                 </div> -->
+<!--               </li> -->
+<!--               <li class="flex items-start"> -->
+<!--                 <span class="text-[#FBB931] mr-2">•</span> -->
+<!--                 <div> -->
+<!--                   <p class="body-m">每 cycle 部署：30 戶（Case A 15 戶 + Case B 15 戶；50/50 mix）</p> -->
+<!--                 </div> -->
+<!--               </li> -->
+<!--             </ul> -->
+<!--              -->
+<!--             <h3 class="headline-h4 mb-6 text-[#FBB931] mt-8">Cycle 情境</h3> -->
+<!--             <ul class="space-y-4"> -->
+<!--               <li class="flex items-start"> -->
+<!--                 <span class="text-[#FBB931] mr-2">•</span> -->
+<!--                 <div> -->
+<!--                   <p class="body-m">Bear：12 個月/ cycle（1.0 次/年）</p> -->
+<!--                 </div> -->
+<!--               </li> -->
+<!--               <li class="flex items-start"> -->
+<!--                 <span class="text-[#FBB931] mr-2">•</span> -->
+<!--                 <div> -->
+<!--                   <p class="body-m">Average：9 個月/ cycle（1.33 次/年）</p> -->
+<!--                 </div> -->
+<!--               </li> -->
+<!--               <li class="flex items-start"> -->
+<!--                 <span class="text-[#FBB931] mr-2">•</span> -->
+<!--                 <div> -->
+<!--                   <p class="body-m">Bull：6 個月/ cycle（2.0 次/年）</p> -->
+<!--                 </div> -->
+<!--               </li> -->
+<!--             </ul> -->
+<!--             <p class="body-xs text-[#6B7280] mt-4">意涵：週期越短 → 資金周轉越快 → 年度可複製次數越多</p> -->
+<!--           </div> -->
+<!--            -->
+<!--           <!-- Right Column --> -->
+<!--           <div> -->
+<!--             <h3 class="headline-h4 mb-6 text-[#FBB931]">運營節奏（示例）</h3> -->
+<!--             <ul class="space-y-4"> -->
+<!--               <li class="flex items-start"> -->
+<!--                 <span class="text-[#FBB931] mr-2">•</span> -->
+<!--                 <div> -->
+<!--                   <p class="body-m font-semibold">收購：</p> -->
+<!--                   <p class="body-s text-[#6B7280]">鎖定區域/屋況可控/轉售流動性佳</p> -->
+<!--                 </div> -->
+<!--               </li> -->
+<!--               <li class="flex items-start"> -->
+<!--                 <span class="text-[#FBB931] mr-2">•</span> -->
+<!--                 <div> -->
+<!--                   <p class="body-m font-semibold">翻修：</p> -->
+<!--                   <p class="body-s text-[#6B7280]">標準化施工規格與工期管理</p> -->
+<!--                 </div> -->
+<!--               </li> -->
+<!--               <li class="flex items-start"> -->
+<!--                 <span class="text-[#FBB931] mr-2">•</span> -->
+<!--                 <div> -->
+<!--                   <p class="body-m font-semibold">出售：</p> -->
+<!--                   <p class="body-s text-[#6B7280]">合作通路 + 定價策略 + 交屋流程</p> -->
+<!--                 </div> -->
+<!--               </li> -->
+<!--             </ul> -->
+<!--              -->
+<!--             <div class="mt-8 bg-[#F9F9F9] p-6 rounded-lg"> -->
+<!--               <p class="body-m font-semibold mb-2">KPI：</p> -->
+<!--               <p class="body-s text-[#6B7280]">成交天數、工期、每戶成本偏差、毛利、庫存週轉</p> -->
+<!--             </div> -->
+<!--           </div> -->
+<!--         </div> -->
+<!--          -->
+<!--         <!-- Page Number Footer --> -->
+<!--         <div class="page-number-footer"> -->
+<!--           <p class="body-xs text-[#40444C]">7</p> -->
+<!--         </div> -->
+<!--         </div> -->
+<!--       </div> -->
+<!--     </section> -->
+<!--  -->
+<!--     <!-- ======================================== -->
+<!--          SLIDE 8: CYCLE P&L -->
+<!--          ======================================== --> -->
+<!--     <section class="slide scrollable bg-[#F9F9F9]" aria-label="第 8 頁：每 cycle 專案損益" role="region" style="padding: 0 !important;"> -->
+<!--       <div class="w-full h-full flex flex-col relative"> -->
+<!--         <!-- Header: Logo and Date --> -->
+<!--         <div class="slide-header"> -->
+<!--           <img src="Logos/TextLogo.png" alt="MoreHarvest" class="h-6 md:h-8 relative z-10" /> -->
+<!--           <span class="body-s text-[#40444C]">2026</span> -->
+<!--         </div> -->
+<!--         <div class="slide-header-line"></div> -->
+<!--          -->
+<!--         <!-- Content --> -->
+<!--         <div class="flex-1 content-wrapper relative" style="padding-top: 0; padding-bottom: 0;"> -->
+<!--         <h2 class="headline-h2 mb-8">每 cycle 專案損益（30 戶、50/50 mix）</h2> -->
+<!--         <p class="body-m text-[#6B7280] mb-8">稅前利益已扣除：5% 利息費用 + 3% 台灣服務費</p> -->
+<!--          -->
+<!--         <div class="bg-white p-8 rounded-lg shadow-lg"> -->
+<!--           <div class="overflow-x-auto"> -->
+<!--             <table class="w-full border-collapse"> -->
+<!--               <tbody> -->
+<!--                 <tr> -->
+<!--                   <td class="p-4 body-m font-semibold">營收（30 × ¥42.5M）</td> -->
+<!--                   <td class="p-4 body-m text-right">¥1,275.000M</td> -->
+<!--                 </tr> -->
+<!--                 <tr class="border-t border-[#EDEEF1]"> -->
+<!--                   <td class="p-4 body-s pl-8">- 購入+翻修資本</td> -->
+<!--                   <td class="p-4 body-s text-right">¥997.353M</td> -->
+<!--                 </tr> -->
+<!--                 <tr> -->
+<!--                   <td class="p-4 body-s pl-8">- 仲介費</td> -->
+<!--                   <td class="p-4 body-s text-right">¥38.250M</td> -->
+<!--                 </tr> -->
+<!--                 <tr> -->
+<!--                   <td class="p-4 body-s pl-8">- 瑕疵保固</td> -->
+<!--                   <td class="p-4 body-s text-right">¥38.895M</td> -->
+<!--                 </tr> -->
+<!--                 <tr> -->
+<!--                   <td class="p-4 body-s pl-8">- 雜費</td> -->
+<!--                   <td class="p-4 body-s text-right">¥24.000M</td> -->
+<!--                 </tr> -->
+<!--                 <tr> -->
+<!--                   <td class="p-4 body-s pl-8">- 利息費用（5%/cycle）</td> -->
+<!--                   <td class="p-4 body-s text-right">¥49.868M</td> -->
+<!--                 </tr> -->
+<!--                 <tr> -->
+<!--                   <td class="p-4 body-s pl-8">- 台灣服務費（營收 3%）</td> -->
+<!--                   <td class="p-4 body-s text-right">¥38.250M</td> -->
+<!--                 </tr> -->
+<!--                 <tr class="border-t-2 border-[#EDEEF1]"> -->
+<!--                   <td class="p-4 body-m font-semibold">= 日本稅前利益（PBT）</td> -->
+<!--                   <td class="p-4 body-m text-right text-[#19B64E]">¥88.384M</td> -->
+<!--                 </tr> -->
+<!--                 <tr> -->
+<!--                   <td class="p-4 body-s pl-8">- 日本公司稅（35%）</td> -->
+<!--                   <td class="p-4 body-s text-right">¥30.935M</td> -->
+<!--                 </tr> -->
+<!--                 <tr class="border-t-2 border-[#FBB931]"> -->
+<!--                   <td class="p-4 body-m font-semibold">= 稅後利益（PAT）</td> -->
+<!--                   <td class="p-4 body-m text-right text-[#FBB931] font-bold">¥57.450M</td> -->
+<!--                 </tr> -->
+<!--               </tbody> -->
+<!--             </table> -->
+<!--           </div> -->
+<!--            -->
+<!--           <p class="body-xs text-[#6B7280] mt-6">提醒：若利息費用採公司間借款，需同時評估日本利息扣除限制與對境外支付的預扣稅（WHT）對淨回收的影響。</p> -->
+<!--         <!-- Page Number Footer --> -->
+<!--         <div class="page-number-footer"> -->
+<!--           <p class="body-xs text-[#40444C]">8</p> -->
+<!--         </div> -->
+<!--         </div> -->
+<!--       </div> -->
+<!--     </section> -->
+<!--  -->
+<!--     <!-- ======================================== -->
+<!--          SLIDE 8: WATERFALL DISTRIBUTION -->
+<!--          ======================================== --> -->
+<!--     <section class="slide scrollable bg-white" aria-label="第 9 頁：Waterfall 分配" role="region" style="padding: 0 !important;"> -->
+<!--       <div class="w-full h-full flex flex-col relative"> -->
+<!--         <!-- Header: Logo and Date --> -->
+<!--         <div class="slide-header"> -->
+<!--           <img src="Logos/TextLogo.png" alt="MoreHarvest" class="h-6 md:h-8 relative z-10" /> -->
+<!--           <span class="body-s text-[#40444C]">2026</span> -->
+<!--         </div> -->
+<!--         <div class="slide-header-line"></div> -->
+<!--          -->
+<!--         <!-- Content --> -->
+<!--         <div class="flex-1 content-wrapper relative" style="padding-top: 0; padding-bottom: 0;"> -->
+<!--         <h2 class="headline-h2 mb-8">Waterfall 分配（示例：每 cycle）</h2> -->
+<!--         <p class="body-m text-[#6B7280] mb-8">基於稅後利益 ¥57.450M；績效費 20%（稅後利潤基礎）</p> -->
+<!--          -->
+<!--         <div class="grid md:grid-cols-2 gap-8"> -->
+<!--           <!-- Left: Distribution Steps --> -->
+<!--           <div> -->
+<!--             <h3 class="headline-h4 mb-6 text-[#FBB931]">分配步驟（概念）</h3> -->
+<!--             <ol class="space-y-4"> -->
+<!--               <li class="flex items-start"> -->
+<!--                 <span class="text-[#FBB931] mr-2 font-bold">1)</span> -->
+<!--                 <div> -->
+<!--                   <p class="body-m font-semibold">支付優先報酬（5% Preferred Return）</p> -->
+<!--                   <ul class="mt-2 space-y-1 ml-4"> -->
+<!--                     <li class="body-s">• 投資人：¥40.0M / cycle</li> -->
+<!--                     <li class="body-s">• 管理人：¥10.0M / cycle</li> -->
+<!--                   </ul> -->
+<!--                 </div> -->
+<!--               </li> -->
+<!--               <li class="flex items-start"> -->
+<!--                 <span class="text-[#FBB931] mr-2 font-bold">2)</span> -->
+<!--                 <p class="body-m">日本公司稅：模型以 35% 計（已反映在稅後利益）</p> -->
+<!--               </li> -->
+<!--               <li class="flex items-start"> -->
+<!--                 <span class="text-[#FBB931] mr-2 font-bold">3)</span> -->
+<!--                 <p class="body-m">績效費：稅後利益的 20%</p> -->
+<!--               </li> -->
+<!--               <li class="flex items-start"> -->
+<!--                 <span class="text-[#FBB931] mr-2 font-bold">4)</span> -->
+<!--                 <p class="body-m">剩餘稅後利潤依 80/20 分配（投資人/管理人）</p> -->
+<!--               </li> -->
+<!--             </ol> -->
+<!--           </div> -->
+<!--            -->
+<!--           <!-- Right: Numbers --> -->
+<!--           <div> -->
+<!--             <h3 class="headline-h4 mb-6 text-[#FBB931]">每 cycle 數字（基準版，不含 WHT）</h3> -->
+<!--             <div class="bg-[#F9F9F9] p-6 rounded-lg space-y-4"> -->
+<!--               <div class="flex justify-between items-center pb-4 border-b border-[#EDEEF1]"> -->
+<!--                 <span class="body-s">稅後利益（PAT）</span> -->
+<!--                 <span class="body-m font-semibold">¥57.450M</span> -->
+<!--               </div> -->
+<!--               <div class="flex justify-between items-center pb-4 border-b border-[#EDEEF1]"> -->
+<!--                 <span class="body-s">績效費（20% × PAT）</span> -->
+<!--                 <span class="body-m">¥11.490M</span> -->
+<!--               </div> -->
+<!--               <div class="flex justify-between items-center pb-4 border-b border-[#EDEEF1]"> -->
+<!--                 <span class="body-s">可分配稅後利潤（PAT - 績效費）</span> -->
+<!--                 <span class="body-m">¥45.960M</span> -->
+<!--               </div> -->
+<!--               <div class="flex justify-between items-center pb-4 border-b border-[#EDEEF1]"> -->
+<!--                 <span class="body-s">投資人分紅（80%）</span> -->
+<!--                 <span class="body-m text-[#19B64E]">¥36.768M</span> -->
+<!--               </div> -->
+<!--               <div class="flex justify-between items-center pb-4 border-b border-[#EDEEF1]"> -->
+<!--                 <span class="body-s">管理人分紅（20%）</span> -->
+<!--                 <span class="body-m">¥9.192M</span> -->
+<!--               </div> -->
+<!--               <div class="flex justify-between items-center pt-4 border-t-2 border-[#FBB931]"> -->
+<!--                 <span class="body-m font-semibold">投資人合計（含 5% Preferred Return）</span> -->
+<!--                 <span class="headline-h5 text-[#FBB931]">¥76.768M</span> -->
+<!--               </div> -->
+<!--               <div class="flex justify-between items-center"> -->
+<!--                 <span class="body-m font-semibold">管理人合計（含 5% + 3% 服務費）</span> -->
+<!--                 <span class="headline-h5 text-[#FBB931]">¥68.932M</span> -->
+<!--               </div> -->
+<!--             </div> -->
+<!--           </div> -->
+<!--         </div> -->
+<!--          -->
+<!--         <p class="body-xs text-[#6B7280] mt-8">備註：投資人對外不以「利息」描述；內部若採公司間借款，會另受 WHT 與利息扣除限制影響。</p> -->
+<!--         <!-- Page Number Footer --> -->
+<!--         <div class="page-number-footer"> -->
+<!--           <p class="body-xs text-[#40444C]">9</p> -->
+<!--         </div> -->
+<!--         </div> -->
+<!--       </div> -->
+<!--     </section> -->
+<!--  -->
+<!--     <!-- ======================================== -->
+<!--          SLIDE 10: SCENARIO ANALYSIS -->
+<!--          ======================================== --> -->
+<!--     <section class="slide scrollable bg-[#F9F9F9]" aria-label="第 10 頁：情境分析" role="region" style="padding: 0 !important;"> -->
+<!--       <div class="w-full h-full flex flex-col relative"> -->
+<!--         <!-- Header: Logo and Date --> -->
+<!--         <div class="slide-header"> -->
+<!--           <img src="Logos/TextLogo.png" alt="MoreHarvest" class="h-6 md:h-8 relative z-10" /> -->
+<!--           <span class="body-s text-[#40444C]">2026</span> -->
+<!--         </div> -->
+<!--         <div class="slide-header-line"></div> -->
+<!--          -->
+<!--         <!-- Content --> -->
+<!--         <div class="flex-1 content-wrapper relative" style="padding-top: 0; padding-bottom: 0;"> -->
+<!--         <h2 class="headline-h2 mb-8">情境分析：投資人與管理人收入（基準版）</h2> -->
+<!--         <p class="body-m text-[#6B7280] mb-8">差異僅在週期長短→每年 cycle 次數不同；每 cycle 經濟假設相同</p> -->
+<!--          -->
+<!--         <div class="bg-white p-8 rounded-lg shadow-lg mb-8"> -->
+<!--           <div class="grid md:grid-cols-2 gap-8 mb-8"> -->
+<!--             <div> -->
+<!--               <h3 class="headline-h5 mb-4 text-[#FBB931]">投資人（¥800M）</h3> -->
+<!--               <p class="body-s mb-2">每 cycle：¥76.768M</p> -->
+<!--               <p class="body-xs text-[#6B7280]">（Preferred Return ¥40.0M + 分紅 ¥36.768M）</p> -->
+<!--             </div> -->
+<!--             <div> -->
+<!--               <h3 class="headline-h5 mb-4 text-[#FBB931]">管理人（¥200M + 管理角色）</h3> -->
+<!--               <p class="body-s mb-2">每 cycle：¥68.932M</p> -->
+<!--               <p class="body-xs text-[#6B7280]">（5% ¥10.0M + 3% 服務費 ¥38.25M + 分紅 ¥9.192M + 績效費 ¥11.49M）</p> -->
+<!--             </div> -->
+<!--           </div> -->
+<!--         </div> -->
+<!--          -->
+<!--         <div class="bg-white p-8 rounded-lg shadow-lg"> -->
+<!--           <div class="overflow-x-auto"> -->
+<!--             <table class="w-full border-collapse"> -->
+<!--               <thead> -->
+<!--                 <tr class="border-b-2 border-[#EDEEF1]"> -->
+<!--                   <th class="text-left p-4 headline-h5">情境</th> -->
+<!--                   <th class="text-left p-4 headline-h5">Cycles/年</th> -->
+<!--                   <th class="text-right p-4 headline-h5">投資人/年</th> -->
+<!--                   <th class="text-right p-4 headline-h5">投資人年化現金收益率</th> -->
+<!--                   <th class="text-right p-4 headline-h5">管理人/年</th> -->
+<!--                 </tr> -->
+<!--               </thead> -->
+<!--               <tbody> -->
+<!--                 <tr class="border-b border-[#EDEEF1]"> -->
+<!--                   <td class="p-4 body-s">Bear（12m）</td> -->
+<!--                   <td class="p-4 body-s">1.0</td> -->
+<!--                   <td class="p-4 body-s text-right">¥76.768M</td> -->
+<!--                   <td class="p-4 body-s text-right text-[#19B64E] font-semibold">9.60%</td> -->
+<!--                   <td class="p-4 body-s text-right">¥68.932M</td> -->
+<!--                 </tr> -->
+<!--                 <tr class="border-b border-[#EDEEF1]"> -->
+<!--                   <td class="p-4 body-s">Average（9m）</td> -->
+<!--                   <td class="p-4 body-s">1.33</td> -->
+<!--                   <td class="p-4 body-s text-right">¥102.357M</td> -->
+<!--                   <td class="p-4 body-s text-right text-[#19B64E] font-semibold">12.79%</td> -->
+<!--                   <td class="p-4 body-s text-right">¥91.909M</td> -->
+<!--                 </tr> -->
+<!--                 <tr> -->
+<!--                   <td class="p-4 body-s">Bull（6m）</td> -->
+<!--                   <td class="p-4 body-s">2.0</td> -->
+<!--                   <td class="p-4 body-s text-right">¥153.536M</td> -->
+<!--                   <td class="p-4 body-s text-right text-[#19B64E] font-semibold">19.19%</td> -->
+<!--                   <td class="p-4 body-s text-right">¥137.864M</td> -->
+<!--                 </tr> -->
+<!--               </tbody> -->
+<!--             </table> -->
+<!--           </div> -->
+<!--         </div> -->
+<!--          -->
+<!--         <p class="body-xs text-[#6B7280] mt-6">註：上述為「不含日本預扣稅（WHT）流失」之基準版。若上層現金回流涉及境外利息/股利支付，需另行呈現「淨到投資人」版本。</p> -->
+<!--         <!-- Page Number Footer --> -->
+<!--         <div class="page-number-footer"> -->
+<!--           <p class="body-xs text-[#40444C]">10</p> -->
+<!--         </div> -->
+<!--         </div> -->
+<!--       </div> -->
+<!--     </section> -->
+<!--  -->
+<!--     <!-- ======================================== -->
+<!--          SLIDE 11: WHT COMPARISON -->
+<!--          ======================================== --> -->
+<!--     <section class="slide scrollable bg-white" aria-label="第 11 頁：日本預扣稅影響" role="region" style="padding: 0 !important;"> -->
+<!--       <div class="w-full h-full flex flex-col relative"> -->
+<!--         <!-- Header: Logo and Date --> -->
+<!--         <div class="slide-header"> -->
+<!--           <img src="Logos/TextLogo.png" alt="MoreHarvest" class="h-6 md:h-8 relative z-10" /> -->
+<!--           <span class="body-s text-[#40444C]">2026</span> -->
+<!--         </div> -->
+<!--         <div class="slide-header-line"></div> -->
+<!--          -->
+<!--         <!-- Content --> -->
+<!--         <div class="flex-1 content-wrapper relative" style="padding-top: 0; padding-bottom: 0;"> -->
+<!--         <h2 class="headline-h2 mb-8">日本預扣稅（WHT）對「淨到投資人」的影響（比較）</h2> -->
+<!--         <p class="body-m text-[#6B7280] mb-8">示例：BVI 收款 vs 台灣條約收款（僅作敏感度；實務以稅務顧問為準）</p> -->
+<!--          -->
+<!--         <div class="bg-[#F9F9F9] p-6 rounded-lg mb-8"> -->
+<!--           <h3 class="headline-h4 mb-4 text-[#FBB931]">核心結論（以 30 戶/cycle、50/50 mix 示範）</h3> -->
+<!--           <ul class="space-y-3"> -->
+<!--             <li class="flex items-start"> -->
+<!--               <span class="text-[#FBB931] mr-2">•</span> -->
+<!--               <p class="body-m">BVI（無條約）假設：利息/股利 WHT 20.42% → 投資人淨額/ cycle 約 ¥61.092M</p> -->
+<!--             </li> -->
+<!--             <li class="flex items-start"> -->
+<!--               <span class="text-[#FBB931] mr-2">•</span> -->
+<!--               <p class="body-m">台灣條約收款假設：利息/股利 WHT 10% → 投資人淨額/ cycle 約 ¥69.091M</p> -->
+<!--             </li> -->
+<!--             <li class="flex items-start"> -->
+<!--               <span class="text-[#FBB931] mr-2">•</span> -->
+<!--               <p class="body-m">差異：投資人每 cycle 淨額約 +¥7.999M（週期越多，年度差異越大）</p> -->
+<!--             </li> -->
+<!--           </ul> -->
+<!--         </div> -->
+<!--          -->
         <div class="bg-white p-8 rounded-lg shadow-lg">
           <h3 class="headline-h4 mb-6 text-[#FBB931]">投資人淨額（示例）</h3>
           <div class="overflow-x-auto">
@@ -1924,7 +2220,7 @@ cd "/Users/riaan/Documents/Design Files/Cursor/Presentation test"
         
         <!-- Logo centered below header -->
         <div class="flex justify-center items-center pt-12 md:pt-16 pb-8">
-          <img src="Logos/TextLogo.png" alt="MoreHarvest" class="h-12 md:h-16" />
+          <img src="Logos/Favicon.png" alt="MoreHarvest" style="width: 512px; height: 512px; max-width: 100%; max-height: 80vh; aspect-ratio: 1/1; object-fit: contain;" />
         </div>
         
         <!-- Contact Information Bottom Left -->
@@ -2226,6 +2522,43 @@ cd "/Users/riaan/Documents/Design Files/Cursor/Presentation test"
     // ========================================
     document.addEventListener('DOMContentLoaded', () => {
       updateProgress(); // Set initial state
+      
+      // #region agent log - Debug: Verify all 500.co fixes with computed styles
+      setTimeout(() => {
+        // Check H1 computed styles (should show !important is working)
+        const h1 = document.querySelector('.headline-h1');
+        if (h1) {
+          const h1Style = window.getComputedStyle(h1);
+          const fontWeight = h1Style.fontWeight;
+          const lineHeight = h1Style.lineHeight;
+          const fontSize = h1Style.fontSize;
+          const fontFamily = h1Style.fontFamily;
+          fetch('http://127.0.0.1:7246/ingest/02e353fc-eb2c-4c1e-a983-3e2b3916d997',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'index.html:DOMContentLoaded',message:'H1 computed styles check',data:{fontWeight:fontWeight,lineHeight:lineHeight,fontSize:fontSize,fontFamily:fontFamily,expectedWeight:'600',expectedLineHeight:'1.2',hasImportant:true},timestamp:Date.now(),sessionId:'debug-session',runId:'verify-fixes',hypothesisId:'A'})}).catch(()=>{});
+        }
+        
+        // Check padding on content-wrapper
+        const contentWrapper = document.querySelector('.content-wrapper');
+        if (contentWrapper) {
+          const wrapperStyle = window.getComputedStyle(contentWrapper);
+          const paddingLeft = wrapperStyle.paddingLeft;
+          const paddingLeftPx = parseFloat(paddingLeft);
+          fetch('http://127.0.0.1:7246/ingest/02e353fc-eb2c-4c1e-a983-3e2b3916d997',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'index.html:DOMContentLoaded',message:'Content wrapper padding check',data:{paddingLeft:paddingLeft,paddingLeftPx:paddingLeftPx,expectedMax:80,isCorrect:paddingLeftPx <= 80},timestamp:Date.now(),sessionId:'debug-session',runId:'verify-fixes',hypothesisId:'B'})}).catch(()=>{});
+        }
+        
+        // Check body text styles
+        const bodyText = document.querySelector('.body-m');
+        if (bodyText) {
+          const bodyStyle = window.getComputedStyle(bodyText);
+          fetch('http://127.0.0.1:7246/ingest/02e353fc-eb2c-4c1e-a983-3e2b3916d997',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'index.html:DOMContentLoaded',message:'Body text styles check',data:{lineHeight:bodyStyle.lineHeight,fontSize:bodyStyle.fontSize,color:bodyStyle.color,fontFamily:bodyStyle.fontFamily},timestamp:Date.now(),sessionId:'debug-session',runId:'verify-fixes',hypothesisId:'C'})}).catch(()=>{});
+        }
+        
+        // Check if body has gradient background
+        const body = document.body;
+        const bodyStyle = window.getComputedStyle(body);
+        const hasBodyGradient = bodyStyle.backgroundImage && bodyStyle.backgroundImage !== 'none';
+        fetch('http://127.0.0.1:7246/ingest/02e353fc-eb2c-4c1e-a983-3e2b3916d997',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'index.html:DOMContentLoaded',message:'Body gradient check',data:{hasGradient:hasBodyGradient,backgroundImage:bodyStyle.backgroundImage},timestamp:Date.now(),sessionId:'debug-session',runId:'verify-fixes',hypothesisId:'D'})}).catch(()=>{});
+      }, 1000);
+      // #endregion
       
       // #region agent log - Check scrolling capability for slides 4 and 7
       try {

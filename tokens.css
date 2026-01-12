@@ -1,0 +1,84 @@
+/* Design Tokens CSS Variables
+   Derived from tokens.json and mds.tokens.json
+   Light + Dark mode support
+*/
+
+:root {
+  /* Base */
+  --bg: #fefefe;
+  --bg-subtle: #f9f9f9;
+  --text: #1e1f20;
+  --text-subtle: #40444c;
+  --text-muted: #6b7280;
+
+  /* Neutral Scale */
+  --neutral-50: #f9f9f9;
+  --neutral-100: #edeef1;
+  --neutral-200: #d8dbdf;
+  --neutral-300: #b6bac3;
+  --neutral-400: #8e95a2;
+  --neutral-500: #6b7280;
+  --neutral-600: #40444c;
+  --neutral-700: #2b2d31;
+  --neutral-800: #1e1f20;
+  --neutral-900: #0f1011;
+  --neutral-950: #1e1f20;
+
+  /* Brand Colors */
+  --brand-amber: #fbb931;
+  --brand-orange: #ff9424;
+
+  /* Interaction Colors */
+  --link: #1282c0;
+  --success: #19b64e;
+  --error: #d03131;
+  --disabled: #8e8f8f;
+
+  /* Spacing Scale (px) */
+  --space-0: 0px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+
+  /* Container - 500.co responsive grid padding */
+  --container-max-width: 1280px;
+  --container-padding-mobile: 16px;
+  --container-padding-tablet: 48px;
+  --container-padding-desktop: 160px;
+  --container-padding-desktop-large: 320px;
+
+  /* Border Radius */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+
+  /* Shadows */
+  --shadow-chevron: 0 1px 2px rgba(64, 68, 76, 0.25);
+  --shadow-sm: 0 1px 2px rgba(64, 68, 76, 0.1);
+  --shadow-md: 0 4px 6px rgba(64, 68, 76, 0.1);
+  --shadow-lg: 0 10px 15px rgba(64, 68, 76, 0.1);
+  --shadow-xl: 0 20px 25px rgba(64, 68, 76, 0.1);
+}
+
+.dark {
+  --bg: #1e1f20;
+  --bg-subtle: #0f1011;
+  --text: #ffffff;
+  --text-subtle: #b6bac3;
+  --text-muted: #8e95a2;
+  --link: #5bcbff;
+  --success: #4ade80;
+  --error: #ff5a5a;
+  --disabled: #b8babb;
+}
